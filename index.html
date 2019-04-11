@@ -2,11 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Titre de la page</title>
+    <title>Character creation</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js"></script>
+    
   </head>
   <body>
-    
+    <label
+      >Chose your faction (better be Cryx, Weakling) :<br /><br />
+      <select class ="selector" id="factions">
+      </select>
+    </label>
+    <span class="error" id="errorfaction"
+      >Must pick a faction (better be Cryx, weakling).</span
+    >
+    <br /><br />
+    <label
+      >Chose your caster type :<br /><br />
+      <select class="selector" id="basetypes"> </select>
+    </label>
+    <span class="error" id="errorbasetype">Must pick a caster type.</span>
+    <br /><br />
+
+  
+    <p class="descriptor"></p>
+    <script src="scripts.js"></script>
   </body>
 </html>
