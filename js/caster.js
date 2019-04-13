@@ -10,6 +10,7 @@ var currentchar = new caster();
 //Update Caster Object every time something is selected;
 document.addEventListener("nameselected", function(e) {
     currentchar.name = e.detail.name;
+    console.log(currentchar);
 });
 
 document.addEventListener("factionselected", function(e) {

@@ -4,8 +4,6 @@ var dataFactions = [
     "Cryx",
     "Cygnar",
     "Khador",
-    "Menoth",
-    "Skorne",
     "Other deviants"
   ];
   

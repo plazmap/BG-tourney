@@ -1,3 +1,17 @@
+//Trigger customevent when caster name is registered.
+
+
+var nameSelector = document.querySelector("#nameselector");
+nameSelector.addEventListener("change", function(e){
+  var name = this.value;
+  var event = new CustomEvent ("nameselected",{
+    bubbles: true,
+    detail: {
+      name: name
+    }
+  });
+  nameSelector.dispatchEvent(event);
+});
 
 //Create faction Select's options.
 
