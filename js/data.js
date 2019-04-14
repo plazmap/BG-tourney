@@ -3,8 +3,7 @@
 var dataFactions = [
     "Cryx",
     "Cygnar",
-    "Khador",
-    "Other deviants"
+    "Khador"
   ];
   
   var dataCharTypes = {

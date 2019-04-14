@@ -8,12 +8,12 @@ function caster(name, faction, basetype) {
 var currentchar = new caster();
 
 //Update Caster Object every time something is selected;
+
 document.addEventListener("nameselected", function(e) {
     currentchar.name = e.detail.name;
-    console.log(currentchar);
 });
 
-document.addEventListener("factionselected", function(e) {
+document.addEventListener("factionselected", function(e) {  
     currentchar.faction = e.detail.faction;
     currentchar.basetype=undefined;
 });
@@ -21,6 +21,23 @@ document.addEventListener("factionselected", function(e) {
 document.addEventListener("basetypeselected", function(e) {
     currentchar.basetype = e.detail.basetype;
 });
+
+//Delete "please select" options from selects after first use.
+
+document.addEventListener("factionselected", function(e) {  
+    var factionselector = document.querySelector("#factionselector");
+        if (factionselector.firstElementChild.value == "error"){
+            factionselector.removeChild(factionselector.firstElementChild);
+    }
+});
+
+document.addEventListener("basetypeselected", function(e) {  
+    var basetypeSelector = document.querySelector("#basetypeselector");
+          if (basetypeSelector.firstElementChild.value == "error"){
+            basetypeSelector.removeChild(basetypeSelector.firstElementChild);
+    }
+});
+
     
 //update descriptor everytime something is selected.
 var descriptorUpdate = function(){
