@@ -21,25 +21,8 @@ document.addEventListener("factionselected", function(e) {
 document.addEventListener("basetypeselected", function(e) {
     currentchar.basetype = e.detail.basetype;
 });
-
-//Delete "please select" options from selects after first use.
-
-document.addEventListener("factionselected", function(e) {  
-    var factionselector = document.querySelector("#factionselector");
-        if (factionselector.firstElementChild.value == "error"){
-            factionselector.removeChild(factionselector.firstElementChild);
-    }
-});
-
-document.addEventListener("basetypeselected", function(e) {  
-    var basetypeSelector = document.querySelector("#basetypeselector");
-          if (basetypeSelector.firstElementChild.value == "error"){
-            basetypeSelector.removeChild(basetypeSelector.firstElementChild);
-    }
-});
-
-    
-//update descriptor everytime something is selected.
+  
+//update descriptor everytime something is selected. TEMPORARY
 var descriptorUpdate = function(){
     var descriptor = document.querySelector(".descriptor");
     if ((currentchar.name)&&(currentchar.faction)&&(currentchar.basetype)){
