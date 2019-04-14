@@ -1,6 +1,5 @@
 //Trigger customevent when caster name is registered.
 
-
 var nameSelector = document.querySelector("#nameselector");
 nameSelector.addEventListener("change", function(e){
   var name = this.value;

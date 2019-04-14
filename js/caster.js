@@ -50,7 +50,9 @@ var descriptorUpdate = function(){
         descriptor.innerHTML = "Your mighty new "+currentchar.basetype+" "+currentchar.faction+" warcaster is nameless.";
     }else if ((!currentchar.name)&&(currentchar.faction)&&(!currentchar.basetype)){
         descriptor.innerHTML = "Your mighty new "+currentchar.faction+" warcaster is nameless.";
-    } 
+    }else if ((currentchar.name)&&(!currentchar.faction)&&(!currentchar.basetype)){
+        descriptor.innerHTML = "Your mighty new warcaster's name is "+currentchar.name;
+    }
 }
 document.addEventListener("nameselected", descriptorUpdate);
 document.addEventListener("factionselected", descriptorUpdate);
