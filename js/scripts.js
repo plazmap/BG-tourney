@@ -42,59 +42,134 @@ factionSelector.addEventListener("change", function(e) {
 });
 
 
-//Create basetype selector once faction is selected.
-var basetypeSelector = document.querySelector("#basetypeselector");
+//Create archetype selector once faction is selected.
+var archetypeSelector = document.querySelector("#archetypeselector");
 
 document.addEventListener("factionselected", function(e) {
-  //First, we remove any eventual options.
-
-  while (basetypeSelector.firstChild) {
-      basetypeSelector.removeChild(basetypeSelector.firstChild);
-}
+  
   var faction = e.detail.faction;
-  var basetypes = dataCharTypes[faction];
+  var archetypes = dataCharTypes[faction];
   
 
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select archetype"));
     opt.value = "error";
-    basetypeSelector.appendChild(opt);
-    basetypes.forEach(basetype => {
+    archetypeSelector.appendChild(opt);
+    archetypes.forEach(archetype => {
       var opt = document.createElement("option");
-      opt.appendChild(document.createTextNode(basetype));
-      opt.value = basetype;
-      basetypeSelector.appendChild(opt);
+      opt.appendChild(document.createTextNode(archetype));
+      opt.value = archetype;
+      archetypeSelector.appendChild(opt);
     });
   
 });
 
-//Trigger customevent when basetype is selected.
-basetypeSelector.addEventListener("change", function(e) {
-    var basetype = e.target.value;
-    var event = new CustomEvent("basetypeselected", {
+//Trigger customevent when archetype is selected.
+archetypeSelector.addEventListener("change", function(e) {
+    var archetype = e.target.value;
+    var event = new CustomEvent("archetypeselected", {
       bubbles: true,
       detail: {
-        basetype: basetype
+        archetype: archetype
       }
     });
-    basetypeSelector.dispatchEvent(event);
+    archetypeSelector.dispatchEvent(event);
+});
+
+
+//Create first spell selector once archetype is selected.
+var firstSpellSelector = document.querySelector("#firstspellselector");
+
+document.addEventListener("archetypeselected", function(e) {
+ 
+  var archetype = e.detail.archetype;
+  var spells = dataSpells[archetype];
+  
+
+    var opt = document.createElement("option");
+    opt.appendChild(document.createTextNode("Please select first spell"));
+    opt.value = "error";
+    firstSpellSelector.appendChild(opt);
+    spells.forEach(spell => {
+      var opt = document.createElement("option");
+      opt.appendChild(document.createTextNode(spell));
+      opt.value = spell;
+      firstSpellSelector.appendChild(opt);
+    });
+  
+});
+
+//Trigger customevent when first spell is selected.
+firstSpellSelector.addEventListener("change", function(e) {
+  var firstspell = e.target.value;
+  var event = new CustomEvent("firstspellselected", {
+    bubbles: true,
+    detail: {
+      firstspell: firstspell
+    }
   });
+  firstSpellSelector.dispatchEvent(event);
+});
+
+//Create second spell selector once archetype is selected.
+var secondSpellSelector = document.querySelector("#secondspellselector");
+
+document.addEventListener("archetypeselected", function(e) {
+ 
+  var archetype = e.detail.archetype;
+  var spells = dataSpells[archetype];
+  
+    var opt = document.createElement("option");
+    opt.appendChild(document.createTextNode("Please select second spell"));
+    opt.value = "error";
+        secondSpellSelector.appendChild(opt);
+    spells.forEach(spell => {
+      var opt = document.createElement("option");
+      opt.appendChild(document.createTextNode(spell));
+      opt.value = spell;
+      secondSpellSelector.appendChild(opt);
+    });
+  
+});
+
+//Trigger customevent when second spell is selected.
+secondSpellSelector.addEventListener("change", function(e) {
+  var secondspell = e.target.value;
+  var event = new CustomEvent("secondspellselected", {
+    bubbles: true,
+    detail: {
+      secondspell: secondspell
+    }
+  });
+  secondSpellSelector.dispatchEvent(event);
+});
 
 
 //Delete "please select" options from selects after first use.
 
-document.addEventListener("factionselected", function(e) {  
-    var factionselector = document.querySelector("#factionselector");
-        if (factionselector.firstElementChild.value == "error"){
-            factionselector.removeChild(factionselector.firstElementChild);
-    }
+function deleteFirstOption(selector){
+  var select = document.querySelector("#"+selector);
+  if (select.firstElementChild.value == "error"){
+    select.removeChild(select.firstElementChild);
+  }
+}
+
+document.addEventListener("factionselected", function(){
+  deleteFirstOption("factionselector");
 });
 
-document.addEventListener("basetypeselected", function(e) {  
-    var basetypeSelector = document.querySelector("#basetypeselector");
-          if (basetypeSelector.firstElementChild.value == "error"){
-            basetypeSelector.removeChild(basetypeSelector.firstElementChild);
-    }
+document.addEventListener("archetypeselected", function() {  
+  deleteFirstOption("archetypeselector");
 });
+
+document.addEventListener("firstspellselected", function() {  
+  deleteFirstOption("firstspellselector");
+});
+
+document.addEventListener("secondspellselected", function() {  
+  deleteFirstOption("secondspellselector");
+});
+
+
 
 
