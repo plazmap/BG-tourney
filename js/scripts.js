@@ -173,3 +173,4 @@ document.addEventListener("secondspellselected", function() {
 
 
 
+console.log(data.faction.cryx.archetypes.pirate.initialweapons.cutlass.POW);

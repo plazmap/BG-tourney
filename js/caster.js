@@ -1,4 +1,6 @@
-  //Constructor for Casters.
+ 
+ 
+ //Constructor for Casters.
 function caster() {
     this.name;
     this.faction;
