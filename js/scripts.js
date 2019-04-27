@@ -19,23 +19,23 @@ var factionSelector = document.querySelector("#factionselector");
 var opt = document.createElement("option");
 opt.appendChild(document.createTextNode("Please select faction"));
 opt.value = "error";
-factionselector.appendChild(opt);
+factionSelector.appendChild(opt);
 
-dataFactions.forEach(dataFaction => {
+Object.keys(data.faction).forEach(factionkey => {
   var opt = document.createElement("option");
-  opt.appendChild(document.createTextNode(dataFaction));
-  opt.value = dataFaction;
-  factionselector.appendChild(opt);
+  opt.appendChild(document.createTextNode(data.faction[factionkey].name));
+  opt.value = factionkey;
+  factionSelector.appendChild(opt);
 });
 
 //Trigger customevent when faction is selected.
 
 factionSelector.addEventListener("change", function(e) {
-  var faction = e.target.value;
+
   var event = new CustomEvent("factionselected", {
   bubbles: true,
   detail: {
-    faction: faction
+    factionkey: e.target.value
     }
   });
   factionSelector.dispatchEvent(event);
@@ -47,18 +47,18 @@ var archetypeSelector = document.querySelector("#archetypeselector");
 
 document.addEventListener("factionselected", function(e) {
   
-  var faction = e.detail.faction;
-  var archetypes = dataCharTypes[faction];
-  
+  var factionkey = e.detail.factionkey;
+  // var archetypes = dataCharTypes[factionkey];
 
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select archetype"));
     opt.value = "error";
     archetypeSelector.appendChild(opt);
-    archetypes.forEach(archetype => {
+  
+    Object.keys(data.faction[factionkey].archetypes).forEach(archetypekey => {
       var opt = document.createElement("option");
-      opt.appendChild(document.createTextNode(archetype));
-      opt.value = archetype;
+      opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].name));
+      opt.value = archetypekey;
       archetypeSelector.appendChild(opt);
     });
   
@@ -66,11 +66,10 @@ document.addEventListener("factionselected", function(e) {
 
 //Trigger customevent when archetype is selected.
 archetypeSelector.addEventListener("change", function(e) {
-    var archetype = e.target.value;
     var event = new CustomEvent("archetypeselected", {
       bubbles: true,
       detail: {
-        archetype: archetype
+        archetypekey: e.target.value
       }
     });
     archetypeSelector.dispatchEvent(event);
@@ -82,30 +81,29 @@ var firstSpellSelector = document.querySelector("#firstspellselector");
 
 document.addEventListener("archetypeselected", function(e) {
  
-  var archetype = e.detail.archetype;
-  var spells = dataSpells[archetype];
-  
+  var archetypekey = e.detail.archetypekey;
 
+  factionkey = currentchar.faction;
+
+  var opt = document.createElement("option");
+  opt.appendChild(document.createTextNode("Please select first spell"));
+  opt.value = "error";
+  firstSpellSelector.appendChild(opt);
+  Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
     var opt = document.createElement("option");
-    opt.appendChild(document.createTextNode("Please select first spell"));
-    opt.value = "error";
+    opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey]));
+    opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
     firstSpellSelector.appendChild(opt);
-    spells.forEach(spell => {
-      var opt = document.createElement("option");
-      opt.appendChild(document.createTextNode(spell));
-      opt.value = spell;
-      firstSpellSelector.appendChild(opt);
-    });
+  });
   
 });
 
 //Trigger customevent when first spell is selected.
 firstSpellSelector.addEventListener("change", function(e) {
-  var firstspell = e.target.value;
   var event = new CustomEvent("firstspellselected", {
     bubbles: true,
     detail: {
-      firstspell: firstspell
+      firstspellkey: e.target.value
     }
   });
   firstSpellSelector.dispatchEvent(event);
@@ -116,17 +114,17 @@ var secondSpellSelector = document.querySelector("#secondspellselector");
 
 document.addEventListener("archetypeselected", function(e) {
  
-  var archetype = e.detail.archetype;
-  var spells = dataSpells[archetype];
+  var archetypekey = e.detail.archetypekey;
+  factionkey = currentchar.faction;
   
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select second spell"));
     opt.value = "error";
         secondSpellSelector.appendChild(opt);
-    spells.forEach(spell => {
+      Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
       var opt = document.createElement("option");
-      opt.appendChild(document.createTextNode(spell));
-      opt.value = spell;
+      opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey]));
+      opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
       secondSpellSelector.appendChild(opt);
     });
   
@@ -134,11 +132,10 @@ document.addEventListener("archetypeselected", function(e) {
 
 //Trigger customevent when second spell is selected.
 secondSpellSelector.addEventListener("change", function(e) {
-  var secondspell = e.target.value;
   var event = new CustomEvent("secondspellselected", {
     bubbles: true,
     detail: {
-      secondspell: secondspell
+      secondspellkey: e.target.value
     }
   });
   secondSpellSelector.dispatchEvent(event);
@@ -168,9 +165,8 @@ document.addEventListener("firstspellselected", function() {
 
 document.addEventListener("secondspellselected", function() {  
   deleteFirstOption("secondspellselector");
+ 
 });
 
 
 
-
-console.log(data.faction.cryx.archetypes.pirate.initialweapons.cutlass.POW);

@@ -25,7 +25,7 @@ document.addEventListener("nameselected", function(e) {
 });
 
 document.addEventListener("factionselected", function(e) {  
-    currentchar.faction = e.detail.faction;
+    currentchar.faction = e.detail.factionkey;
     currentchar.archetype=undefined;
     currentchar.spells=[];
     deleteChildren("archetypeselector");
@@ -34,18 +34,18 @@ document.addEventListener("factionselected", function(e) {
 });
 
 document.addEventListener("archetypeselected", function(e) {
-    currentchar.archetype = e.detail.archetype;
+    currentchar.archetype = e.detail.archetypekey;
     currentchar.spells=[];
     deleteChildren("firstspellselector");
     deleteChildren("secondspellselector");
 });
 
 document.addEventListener("firstspellselected", function(e) {
-    currentchar.spells[0] = e.detail.firstspell;
+    currentchar.spells[0] = e.detail.firstspellkey;
 });
 
 document.addEventListener("secondspellselected", function(e) {
-    currentchar.spells[1] = e.detail.secondspell;
+    currentchar.spells[1] = e.detail.secondspellkey;
 });
 
  
@@ -66,7 +66,7 @@ function descriptorUpdate(){
     }
     var spells = document.querySelector(".spells");
     if ((currentchar.spells[0])&&(currentchar.spells[1])){
-        spells.innerHTML = "He/She yields mighty magic : " +currentchar.spells[0]+" and "+currentchar.spells[1];
+        spells.innerHTML = "He/She yields powerfull magic : " +currentchar.spells[0]+" and "+currentchar.spells[1];
     }else{
         spells.innerHTML = "";
     }
