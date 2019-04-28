@@ -5,10 +5,14 @@ function caster() {
     this.name;
     this.faction;
     this.archetype;
+    this.capacities =[];
     this.spells = []; 
   }
   
 var currentchar = new caster();
+
+
+
 
 //Create usefull function in order to delete all child nodes for selectors.
 function deleteChildren(select){
@@ -38,6 +42,12 @@ document.addEventListener("archetypeselected", function(e) {
     currentchar.spells=[];
     deleteChildren("firstspellselector");
     deleteChildren("secondspellselector");
+    deleteChildren("thirdspellselector");
+    deleteChildren("capacityselector");
+});
+
+document.addEventListener("capacityselected", function(e) {
+    currentchar.capacities[0] = e.detail.capacitykey;
 });
 
 document.addEventListener("firstspellselected", function(e) {
@@ -46,6 +56,10 @@ document.addEventListener("firstspellselected", function(e) {
 
 document.addEventListener("secondspellselected", function(e) {
     currentchar.spells[1] = e.detail.secondspellkey;
+});
+
+document.addEventListener("thirdspellselected", function(e) {
+    currentchar.spells[2] = e.detail.thirdspellkey;
 });
 
  
@@ -65,8 +79,8 @@ function descriptorUpdate(){
         descriptor.innerHTML = "Your mighty new warcaster's name is "+currentchar.name;
     }
     var spells = document.querySelector(".spells");
-    if ((currentchar.spells[0])&&(currentchar.spells[1])){
-        spells.innerHTML = "He/She yields powerfull magic : " +currentchar.spells[0]+" and "+currentchar.spells[1];
+    if ((currentchar.spells[0])&&(currentchar.spells[1])&&(currentchar.spells[2])){
+        spells.innerHTML = "He/She yields powerfull magic : " +currentchar.spells[0]+" and "+currentchar.spells[1]+" and "+currentchar.spells[2];
     }else{
         spells.innerHTML = "";
     }
@@ -77,6 +91,7 @@ document.addEventListener("factionselected", descriptorUpdate);
 document.addEventListener("archetypeselected", descriptorUpdate);
 document.addEventListener("firstspellselected", descriptorUpdate);
 document.addEventListener("secondspellselected", descriptorUpdate);
+document.addEventListener("thirdspellselected", descriptorUpdate);
 
 
 

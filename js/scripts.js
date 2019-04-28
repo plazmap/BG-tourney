@@ -75,8 +75,47 @@ archetypeSelector.addEventListener("change", function(e) {
     archetypeSelector.dispatchEvent(event);
 });
 
+//create initial capacity selector once archetype is selected.
+
+var capacitySelector = document.querySelector("#capacityselector");
+
+document.addEventListener("archetypeselected", function(e) {
+ 
+  var archetypekey = e.detail.archetypekey;
+
+  factionkey = currentchar.faction;
+
+  var opt = document.createElement("option");
+  opt.appendChild(document.createTextNode("Please select initial capacity"));
+  opt.value = "error";
+  capacitySelector.appendChild(opt);
+
+  Object.keys(data.faction[factionkey].archetypes[archetypekey].capacities.initial).forEach(capacitykey => {
+    var opt = document.createElement("option");
+    opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].capacities.initial[capacitykey].name));
+    opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[capacitykey];
+    capacitySelector.appendChild(opt);
+  });
+  
+});
+
+//Trigger customevent when initial capacity is selected.
+
+capacitySelector.addEventListener("change", function(e) {
+  var event = new CustomEvent("capacityselected", {
+    bubbles: true,
+    detail: {
+      capacitykey: e.target.value
+    }
+  });
+  capacitySelector.dispatchEvent(event);
+});
+
+
+
 
 //Create first spell selector once archetype is selected.
+
 var firstSpellSelector = document.querySelector("#firstspellselector");
 
 document.addEventListener("archetypeselected", function(e) {
@@ -141,6 +180,37 @@ secondSpellSelector.addEventListener("change", function(e) {
   secondSpellSelector.dispatchEvent(event);
 });
 
+//Create third spell selector once archetype is selected.
+var thirdSpellSelector = document.querySelector("#thirdspellselector");
+
+document.addEventListener("archetypeselected", function(e) {
+ 
+  var archetypekey = e.detail.archetypekey;
+  factionkey = currentchar.faction;
+  
+    var opt = document.createElement("option");
+    opt.appendChild(document.createTextNode("Please select third spell"));
+    opt.value = "error";
+        thirdSpellSelector.appendChild(opt);
+      Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
+      var opt = document.createElement("option");
+      opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey]));
+      opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
+      thirdSpellSelector.appendChild(opt);
+    });
+  
+});
+
+//Trigger customevent when third spell is selected.
+thirdSpellSelector.addEventListener("change", function(e) {
+  var event = new CustomEvent("thirdspellselected", {
+    bubbles: true,
+    detail: {
+      thirdspellkey: e.target.value
+    }
+  });
+  secondSpellSelector.dispatchEvent(event);
+});
 
 //Delete "please select" options from selects after first use.
 
@@ -159,14 +229,24 @@ document.addEventListener("archetypeselected", function() {
   deleteFirstOption("archetypeselector");
 });
 
+document.addEventListener("capacityselected", function() {  
+  deleteFirstOption("capacityselector");
+});
+
 document.addEventListener("firstspellselected", function() {  
   deleteFirstOption("firstspellselector");
 });
 
 document.addEventListener("secondspellselected", function() {  
   deleteFirstOption("secondspellselector");
- 
-});
+ });
+
+ document.addEventListener("thirdspellselected", function() {  
+  deleteFirstOption("thirdspellselector");
+ });
+
+
+
 
 
 

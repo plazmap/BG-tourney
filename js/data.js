@@ -1,31 +1,17 @@
+// var xhr = new XMLHttpRequest();
+// xhr.open('GET', 'data.json');
+// xhr.send(null);
 
+// xhr.addEventListener('readystatechange', function() {
+//     if (xhr.readyState === 4) {
+//         console.log("plop");
+//     }else{
+//         alert('plop!');
+//     }
+// });
 
-var dataFactions = [
-    "Cryx",
-    "Cygnar",
-    "Khador"
-  ];
-  
-  var dataCharTypes = {
-    "Cryx": ["Pirate", "Lich", "Sorcerer"],
-    "Cygnar": ["Arcanist", "Combattant", "Gun Mage"],
-    "Khador": ["Koldun", "ManHunter", "Manowar"]
-  };
-
-  var dataSpells = {
-          "Pirate" : ["Admonition", "Bleed", "Carnage", "Ghost Walk", "Grave Wind", "Infernal Machine", "Occultation", "Scything Touch"],
-          "Lich" : ["Blood Rain", "Curse of Shadows", "Ghost Walk", "Hellfire", "Infernal Machine", "Parasite", "Scything Touch", "Stranglehold"],
-          "Sorcerer" : ["Crippling Grasp", "Ghost Walk", "Hellfire", "Infernal Machine", "Occultation", "Scything Touch", "Vanish", "Venom"],
-          "Arcanist" : ["Arcane Blast", "Arcane Bolt", "Arcane Shield", "Blur", "Chain Lightning", "Lightning Shroud", "Mage Sight", "Polarity Shield"],
-          "Combattant" : ["Arcane Bolt", "Arcane Shield", "Blur", "Deadeye", "Mage Sight", "Positive Charge", "Rebuke", "Snipe"],
-          "Gun Mage" : ["Arcane Bolt", "Blur", "Calamity", "Deadeye", "Energizer", "Fire Group", "Mage Sight", "Snipe"],
-          "Koldun" : ["Boundless Charge", "Freezing Mist", "Frost Hammer", "Fury", "Ghost Walk", "Iron Flesh", "Razor Wind", "Wind Wall"],
-          "ManHunter" : ["Boundless Charge", "Energizer", "Fury", "Iron Flesh", "Occultation", "Quicken", "Razor Wind", "Wind Rush"],
-          "Manowar" : ["Arcane Might", "Boundless Charge", "Energizer", "Fury", "Iron Flesh", "Razor Wind", "Solid Ground", "Superiority"]
-  }
-
-var data ={
-      "faction": {
+var data = {
+    "faction": {
         "cryx": {
             "name": "Cryx Empire",
             "archetypes": {
@@ -109,7 +95,7 @@ var data ={
                         }
                     },
                     "capacities":{
-                        "initials":{
+                        "initial":{
                             "point blank":{
                                 "name":"Point Blank",
                                 "description":"Dans son activation, le Pirate peut faire une attaque de mêlée avec son arme distance, avec une zone de mêlée de 0,5''. Ne pas ajouter la STR au POW. Pas de dommages boostés en charge."
@@ -213,7 +199,7 @@ var data ={
                         }
                     },
                     "capacities":{
-                        "initials":{
+                        "initial":{
                             "soul taker cull soul":{
                                 "name":"Soul Taker : Cull Soul",
                                 "description":"La Liche gagne un compteur soul pour chaque figurine vivante ennemie détruite à l'intérieur de '' d'elle. Quand la Liche récupère son focus à la Phase de Contrôle suivante, remplacez chaque compteur soul sur la Liche par 1 point de focus."
@@ -319,7 +305,7 @@ var data ={
                         }
                     },
                     "capacities":{
-                        "initials":{
+                        "initial":{
                             "soul taker cull soul":{
                                 "name":"Soul Taker : Cull Soul",
                                 "description":"La Liche gagne un compteur soul pour chaque figurine vivante ennemie détruite à l'intérieur de '' d'elle. Quand la Liche récupère son focus à la Phase de Contrôle suivante, remplacez chaque compteur soul sur la Liche par 1 point de focus."
@@ -435,7 +421,7 @@ var data ={
                         }
                     },
                     "capacities":{
-                        "initials":{
+                        "initial":{
                         },
                         "acquired":{
                             "arcane vortex":{
@@ -542,7 +528,7 @@ var data ={
                         }
                     },
                     "capacities":{
-                        "initials":{
+                        "initial":{
                         },
                         "acquired":{
                             "dig in":{
@@ -642,7 +628,7 @@ var data ={
                         }
                     },
                     "capacities":{
-                        "initials":{
+                        "initial":{
                             "gun fighter":{
                                 "name":"Gun Fighter",
                                 "description":"Le Gun Mage a une zone de mêlée de 0,5'' et peut faire des attaques à distance ciblant des figurines avec qui il est en mêlée."

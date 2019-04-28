@@ -2,6 +2,22 @@
     visibility: hidden;
     color: red;
 }
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.constructor{
+    border-style: solid;
+    width:45%;
+   
+}
+
+.helper{
+    border-style: solid;
+    width:45%;
+    
+}
 
 .descriptor{
     color: blue;
