@@ -1,3 +1,55 @@
+//Create usefull function in order to delete "please select" options from selectors after first use.
+
+function deleteFirstOption(selector){
+  var select = document.querySelector("#"+selector);
+  if (select.firstElementChild.value == "error"){
+    select.removeChild(select.firstElementChild);
+  }
+}
+
+//Create usefull function in order to delete all child nodes for selectors.
+function deleteChildren(select){
+  var selector = document.querySelector("#"+select);
+   while (selector.firstChild) {
+       selector.removeChild(selector.firstChild);
+   }
+}
+
+//Delete please select options and all child nodes when needed.
+
+document.addEventListener("factionselected", function(){
+  deleteFirstOption("factionselector");
+  deleteChildren("archetypeselector");
+  deleteChildren("firstspellselector");
+  deleteChildren("secondspellselector");
+  deleteChildren("thirdspellselector");
+  deleteChildren("capacityselector");
+});
+
+document.addEventListener("archetypeselected", function() {  
+  deleteFirstOption("archetypeselector");
+  deleteChildren("firstspellselector");
+  deleteChildren("secondspellselector");
+  deleteChildren("thirdspellselector");
+  deleteChildren("capacityselector");
+});
+
+document.addEventListener("capacityselected", function() {  
+  deleteFirstOption("capacityselector");
+});
+
+document.addEventListener("firstspellselected", function() {  
+  deleteFirstOption("firstspellselector");
+});
+
+document.addEventListener("secondspellselected", function() {  
+  deleteFirstOption("secondspellselector");
+ });
+
+ document.addEventListener("thirdspellselected", function() {  
+  deleteFirstOption("thirdspellselector");
+ });
+ 
 //Trigger customevent when caster name is registered.
 
 var nameSelector = document.querySelector("#nameselector");
@@ -61,7 +113,6 @@ document.addEventListener("factionselected", function(e) {
       opt.value = archetypekey;
       archetypeSelector.appendChild(opt);
     });
-  
 });
 
 //Trigger customevent when archetype is selected.
@@ -96,7 +147,6 @@ document.addEventListener("archetypeselected", function(e) {
     opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[capacitykey];
     capacitySelector.appendChild(opt);
   });
-  
 });
 
 //Trigger customevent when initial capacity is selected.
@@ -110,9 +160,6 @@ capacitySelector.addEventListener("change", function(e) {
   });
   capacitySelector.dispatchEvent(event);
 });
-
-
-
 
 //Create first spell selector once archetype is selected.
 
@@ -134,7 +181,6 @@ document.addEventListener("archetypeselected", function(e) {
     opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
     firstSpellSelector.appendChild(opt);
   });
-  
 });
 
 //Trigger customevent when first spell is selected.
@@ -166,7 +212,6 @@ document.addEventListener("archetypeselected", function(e) {
       opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
       secondSpellSelector.appendChild(opt);
     });
-  
 });
 
 //Trigger customevent when second spell is selected.
@@ -198,7 +243,6 @@ document.addEventListener("archetypeselected", function(e) {
       opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
       thirdSpellSelector.appendChild(opt);
     });
-  
 });
 
 //Trigger customevent when third spell is selected.
@@ -212,38 +256,9 @@ thirdSpellSelector.addEventListener("change", function(e) {
   secondSpellSelector.dispatchEvent(event);
 });
 
-//Delete "please select" options from selects after first use.
 
-function deleteFirstOption(selector){
-  var select = document.querySelector("#"+selector);
-  if (select.firstElementChild.value == "error"){
-    select.removeChild(select.firstElementChild);
-  }
-}
 
-document.addEventListener("factionselected", function(){
-  deleteFirstOption("factionselector");
-});
 
-document.addEventListener("archetypeselected", function() {  
-  deleteFirstOption("archetypeselector");
-});
-
-document.addEventListener("capacityselected", function() {  
-  deleteFirstOption("capacityselector");
-});
-
-document.addEventListener("firstspellselected", function() {  
-  deleteFirstOption("firstspellselector");
-});
-
-document.addEventListener("secondspellselected", function() {  
-  deleteFirstOption("secondspellselector");
- });
-
- document.addEventListener("thirdspellselected", function() {  
-  deleteFirstOption("thirdspellselector");
- });
 
 
 
