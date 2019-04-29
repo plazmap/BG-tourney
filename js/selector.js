@@ -1,27 +1,28 @@
 //Delete all child nodes when needed.
 
-document.addEventListener("factionselected", function(){
-  deleteChildren("archetypeselector");
-  deleteChildren("firstspellselector");
-  deleteChildren("secondspellselector");
-  deleteChildren("thirdspellselector");
-  deleteChildren("capacityselector");
+document.addEventListener("select:faction", function(){
+  deleteChildren("archetype-selector");
+  deleteChildren("first-spell-selector");
+  deleteChildren("second-spell-selector");
+  deleteChildren("third-spell-selector");
+  deleteChildren("capacity-selector");
 });
 
-document.addEventListener("archetypeselected", function() {  
-  deleteChildren("firstspellselector");
-  deleteChildren("secondspellselector");
-  deleteChildren("thirdspellselector");
-  deleteChildren("capacityselector");
+document.addEventListener("select:archetype", function() {  
+  deleteChildren("first-spell-selector");
+  deleteChildren("second-spell-selector");
+  deleteChildren("third-spell-selector");
+  deleteChildren("capacity-selector");
 });
 
  
 //Trigger customevent when caster name is registered.
 
-var nameSelector = document.querySelector("#nameselector");
+var nameSelector = document.querySelector("#name-selector");
+console.log(nameSelector);
 nameSelector.addEventListener("change", function(e){
   var name = this.value;
-  var event = new CustomEvent ("nameselected",{
+  var event = new CustomEvent ("select:name",{
     bubbles: true,
     detail: {
       name: name
@@ -32,7 +33,7 @@ nameSelector.addEventListener("change", function(e){
 
 //Create faction Select's options.
 
-var factionSelector = document.querySelector("#factionselector");
+var factionSelector = document.querySelector("#faction-selector");
 
 var opt = document.createElement("option");
 opt.appendChild(document.createTextNode("Please select faction"));
@@ -54,7 +55,7 @@ Object.keys(data.faction).forEach(factionkey => {
 
 factionSelector.addEventListener("change", function(e) {
 
-  var event = new CustomEvent("factionselected", {
+  var event = new CustomEvent("select:faction", {
   bubbles: true,
   detail: {
     factionkey: e.target.value
@@ -65,9 +66,9 @@ factionSelector.addEventListener("change", function(e) {
 
 
 //Create archetype selector once faction is selected.
-var archetypeSelector = document.querySelector("#archetypeselector");
+var archetypeSelector = document.querySelector("#archetype-selector");
 
-document.addEventListener("factionselected", function(e) {
+document.addEventListener("select:faction", function(e) {
   
   var factionkey = e.detail.factionkey;
   // var archetypes = dataCharTypes[factionkey];
@@ -89,7 +90,7 @@ document.addEventListener("factionselected", function(e) {
 
 //Trigger customevent when archetype is selected.
 archetypeSelector.addEventListener("change", function(e) {
-    var event = new CustomEvent("archetypeselected", {
+    var event = new CustomEvent("select:archetype", {
       bubbles: true,
       detail: {
         archetypekey: e.target.value
@@ -100,9 +101,9 @@ archetypeSelector.addEventListener("change", function(e) {
 
 //create initial capacity selector once archetype is selected.
 
-var capacitySelector = document.querySelector("#capacityselector");
+var capacitySelector = document.querySelector("#capacity-selector");
 
-document.addEventListener("archetypeselected", function(e) {
+document.addEventListener("select:archetype", function(e) {
  
   var archetypekey = e.detail.archetypekey;
 
@@ -114,7 +115,7 @@ document.addEventListener("archetypeselected", function(e) {
   opt.setAttribute ("disabled", "disabled");
   opt.setAttribute ("selected", "selected");
   capacitySelector.appendChild(opt);
-
+  
   Object.keys(data.faction[factionkey].archetypes[archetypekey].capacities.initial).forEach(capacitykey => {
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].capacities.initial[capacitykey].name));
@@ -126,7 +127,7 @@ document.addEventListener("archetypeselected", function(e) {
 //Trigger customevent when initial capacity is selected.
 
 capacitySelector.addEventListener("change", function(e) {
-  var event = new CustomEvent("capacityselected", {
+  var event = new CustomEvent("select:capacity", {
     bubbles: true,
     detail: {
       capacitykey: e.target.value
@@ -137,9 +138,9 @@ capacitySelector.addEventListener("change", function(e) {
 
 //Create first spell selector once archetype is selected.
 
-var firstSpellSelector = document.querySelector("#firstspellselector");
+var firstSpellSelector = document.querySelector("#first-spell-selector");
 
-document.addEventListener("archetypeselected", function(e) {
+document.addEventListener("select:archetype", function(e) {
  
   var archetypekey = e.detail.archetypekey;
 
@@ -161,7 +162,7 @@ document.addEventListener("archetypeselected", function(e) {
 
 //Trigger customevent when first spell is selected.
 firstSpellSelector.addEventListener("change", function(e) {
-  var event = new CustomEvent("firstspellselected", {
+  var event = new CustomEvent("select:firstspell", {
     bubbles: true,
     detail: {
       firstspellkey: e.target.value
@@ -171,9 +172,9 @@ firstSpellSelector.addEventListener("change", function(e) {
 });
 
 //Create second spell selector once archetype is selected.
-var secondSpellSelector = document.querySelector("#secondspellselector");
+var secondSpellSelector = document.querySelector("#second-spell-selector");
 
-document.addEventListener("archetypeselected", function(e) {
+document.addEventListener("select:archetype", function(e) {
  
   var archetypekey = e.detail.archetypekey;
   factionkey = currentchar.faction;
@@ -194,7 +195,7 @@ document.addEventListener("archetypeselected", function(e) {
 
 //Trigger customevent when second spell is selected.
 secondSpellSelector.addEventListener("change", function(e) {
-  var event = new CustomEvent("secondspellselected", {
+  var event = new CustomEvent("select:secondspell", {
     bubbles: true,
     detail: {
       secondspellkey: e.target.value
@@ -204,9 +205,9 @@ secondSpellSelector.addEventListener("change", function(e) {
 });
 
 //Create third spell selector once archetype is selected.
-var thirdSpellSelector = document.querySelector("#thirdspellselector");
+var thirdSpellSelector = document.querySelector("#third-spell-selector");
 
-document.addEventListener("archetypeselected", function(e) {
+document.addEventListener("select:archetype", function(e) {
  
   var archetypekey = e.detail.archetypekey;
   factionkey = currentchar.faction;
@@ -228,7 +229,7 @@ document.addEventListener("archetypeselected", function(e) {
 
 //Trigger customevent when third spell is selected.
 thirdSpellSelector.addEventListener("change", function(e) {
-  var event = new CustomEvent("thirdspellselected", {
+  var event = new CustomEvent("select:thirdspell", {
     bubbles: true,
     detail: {
       thirdspellkey: e.target.value

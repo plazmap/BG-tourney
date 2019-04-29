@@ -23,12 +23,12 @@ function descriptorUpdate(){
     }
 }
 
-document.addEventListener("nameselected", descriptorUpdate);
-document.addEventListener("factionselected", descriptorUpdate);
-document.addEventListener("archetypeselected", descriptorUpdate);
-document.addEventListener("firstspellselected", descriptorUpdate);
-document.addEventListener("secondspellselected", descriptorUpdate);
-document.addEventListener("thirdspellselected", descriptorUpdate);
+document.addEventListener("select:name", descriptorUpdate);
+document.addEventListener("select:faction", descriptorUpdate);
+document.addEventListener("select:archetype", descriptorUpdate);
+document.addEventListener("select:firstspell", descriptorUpdate);
+document.addEventListener("select:secondspell", descriptorUpdate);
+document.addEventListener("select:thirdspell", descriptorUpdate);
 
 
 
