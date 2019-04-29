@@ -1,24 +1,6 @@
-//Create usefull function in order to delete "please select" options from selectors after first use.
-
-function deleteFirstOption(selector){
-  var select = document.querySelector("#"+selector);
-  if (select.firstElementChild.value == "error"){
-    select.removeChild(select.firstElementChild);
-  }
-}
-
-//Create usefull function in order to delete all child nodes for selectors.
-function deleteChildren(select){
-  var selector = document.querySelector("#"+select);
-   while (selector.firstChild) {
-       selector.removeChild(selector.firstChild);
-   }
-}
-
-//Delete please select options and all child nodes when needed.
+//Delete all child nodes when needed.
 
 document.addEventListener("factionselected", function(){
-  deleteFirstOption("factionselector");
   deleteChildren("archetypeselector");
   deleteChildren("firstspellselector");
   deleteChildren("secondspellselector");
@@ -27,28 +9,12 @@ document.addEventListener("factionselected", function(){
 });
 
 document.addEventListener("archetypeselected", function() {  
-  deleteFirstOption("archetypeselector");
   deleteChildren("firstspellselector");
   deleteChildren("secondspellselector");
   deleteChildren("thirdspellselector");
   deleteChildren("capacityselector");
 });
 
-document.addEventListener("capacityselected", function() {  
-  deleteFirstOption("capacityselector");
-});
-
-document.addEventListener("firstspellselected", function() {  
-  deleteFirstOption("firstspellselector");
-});
-
-document.addEventListener("secondspellselected", function() {  
-  deleteFirstOption("secondspellselector");
- });
-
- document.addEventListener("thirdspellselected", function() {  
-  deleteFirstOption("thirdspellselector");
- });
  
 //Trigger customevent when caster name is registered.
 
@@ -70,7 +36,11 @@ var factionSelector = document.querySelector("#factionselector");
 
 var opt = document.createElement("option");
 opt.appendChild(document.createTextNode("Please select faction"));
-opt.value = "error";
+opt.setAttribute ("hidden", "hidden");
+opt.setAttribute ("disabled", "disabled");
+opt.setAttribute ("selected", "selected");
+
+
 factionSelector.appendChild(opt);
 
 Object.keys(data.faction).forEach(factionkey => {
@@ -104,7 +74,9 @@ document.addEventListener("factionselected", function(e) {
 
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select archetype"));
-    opt.value = "error";
+    opt.setAttribute ("hidden", "hidden");
+    opt.setAttribute ("disabled", "disabled");
+    opt.setAttribute ("selected", "selected");
     archetypeSelector.appendChild(opt);
   
     Object.keys(data.faction[factionkey].archetypes).forEach(archetypekey => {
@@ -138,7 +110,9 @@ document.addEventListener("archetypeselected", function(e) {
 
   var opt = document.createElement("option");
   opt.appendChild(document.createTextNode("Please select initial capacity"));
-  opt.value = "error";
+  opt.setAttribute ("hidden", "hidden");
+  opt.setAttribute ("disabled", "disabled");
+  opt.setAttribute ("selected", "selected");
   capacitySelector.appendChild(opt);
 
   Object.keys(data.faction[factionkey].archetypes[archetypekey].capacities.initial).forEach(capacitykey => {
@@ -173,7 +147,9 @@ document.addEventListener("archetypeselected", function(e) {
 
   var opt = document.createElement("option");
   opt.appendChild(document.createTextNode("Please select first spell"));
-  opt.value = "error";
+  opt.setAttribute ("hidden", "hidden");
+  opt.setAttribute ("disabled", "disabled");
+  opt.setAttribute ("selected", "selected");
   firstSpellSelector.appendChild(opt);
   Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
     var opt = document.createElement("option");
@@ -204,7 +180,9 @@ document.addEventListener("archetypeselected", function(e) {
   
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select second spell"));
-    opt.value = "error";
+    opt.setAttribute ("hidden", "hidden");
+    opt.setAttribute ("disabled", "disabled");
+    opt.setAttribute ("selected", "selected");
         secondSpellSelector.appendChild(opt);
       Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
       var opt = document.createElement("option");
@@ -235,9 +213,12 @@ document.addEventListener("archetypeselected", function(e) {
   
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select third spell"));
-    opt.value = "error";
-        thirdSpellSelector.appendChild(opt);
-      Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
+    opt.setAttribute ("hidden", "hidden");
+    opt.setAttribute ("disabled", "disabled");
+    opt.setAttribute ("selected", "selected");
+    thirdSpellSelector.appendChild(opt);
+
+    Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
       var opt = document.createElement("option");
       opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey]));
       opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
@@ -253,7 +234,7 @@ thirdSpellSelector.addEventListener("change", function(e) {
       thirdspellkey: e.target.value
     }
   });
-  secondSpellSelector.dispatchEvent(event);
+  thirdSpellSelector.dispatchEvent(event);
 });
 
 
