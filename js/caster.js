@@ -30,17 +30,18 @@ document.addEventListener("select:archetype", function(e) {
 });
 
 document.addEventListener("select:capacity", function(e) {
+    console.log(e.detail.capacitykey);
     currentchar.capacities[0] = e.detail.capacitykey;
+    console.log(currentchar.capacities);
 });
 
-document.addEventListener("select:firstspell", function(e) {
-    currentchar.spells[0] = e.detail.firstspellkey;
+document.addEventListener("select:spell", function(e) {
+    currentchar.spells =[];
+    var spellSelectors = document.querySelectorAll(".spell-selector");
+    spellSelectors.forEach(spellSelector => {
+        if (spellSelector.value != "Please select a spell"){
+            currentchar.spells.unshift(spellSelector.value);
+        }
+    })
 });
 
-document.addEventListener("select:secondspell", function(e) {
-    currentchar.spells[1] = e.detail.secondspellkey;
-});
-
-document.addEventListener("select:thirdspell", function(e) {
-    currentchar.spells[2] = e.detail.thirdspellkey;
-});
