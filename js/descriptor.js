@@ -26,9 +26,8 @@ function descriptorUpdate(){
 document.addEventListener("select:name", descriptorUpdate);
 document.addEventListener("select:faction", descriptorUpdate);
 document.addEventListener("select:archetype", descriptorUpdate);
-document.addEventListener("select:firstspell", descriptorUpdate);
-document.addEventListener("select:secondspell", descriptorUpdate);
-document.addEventListener("select:thirdspell", descriptorUpdate);
+document.addEventListener("select:spell", descriptorUpdate);
+
 
 
 
