@@ -30,7 +30,6 @@ document.addEventListener("select:archetype", function(e) {
 });
 
 document.addEventListener("select:capacity", function(e) {
-    console.log(e.detail.capacitykey);
     currentchar.capacities[0] = e.detail.capacitykey;
     console.log(currentchar.capacities);
 });

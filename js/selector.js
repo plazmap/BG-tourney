@@ -102,18 +102,18 @@ document.addEventListener("select:archetype", function(e) {
   var factionkey = currentchar.faction;
 
   var opt = document.createElement("option");
-  opt.appendChild(document.createTextNode("Please select initial capacity"));
+  opt.appendChild(document.createTextNode("Please select starting additional capacity"));
   opt.setAttribute ("hidden", "hidden");
   opt.setAttribute ("disabled", "disabled");
   opt.setAttribute ("selected", "selected");
   capacitySelector.appendChild(opt);
-  
-  Object.keys(data.faction[factionkey].archetypes[archetypekey].capacities.initial).forEach(capacitykey => {
+
+  Object.keys(data.faction[factionkey].archetypes[archetypekey].capacities.acquired).forEach(capacitykey => {   
     var opt = document.createElement("option");
-    opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].capacities.initial[capacitykey].name));
-    opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[capacitykey];
+    opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].capacities.acquired[capacitykey].name));
+    opt.value = capacitykey;
     capacitySelector.appendChild(opt);
-  });
+   });
 });
 
 

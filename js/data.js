@@ -19,7 +19,7 @@ var data = {
                     "name": "Pirate",
                     "spelllist":{
                         "initial":["admonition", "bleed", "carnage", "ghost Walk", "grave Wind", "infernal Machine", "occultation", "scything Touch"],
-                        "acquired":["dash","deceleration","death ward", "hex blast", "telekenis"]
+                        "extended":["dash","deceleration","death ward", "hex blast", "telekenis"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -133,7 +133,7 @@ var data = {
                     "name": "Iron Lich",
                     "spelllist":{
                         "initial":["blood rain", "curse of shadows", "ghost walk", "hellfire", "infernal machine", "parasite", "scything touch", "stranglehold"],
-                        "acquired":["Death Ward","excarnate","hex blast", "mortality", "soul gate"]
+                        "extended":["Death Ward","excarnate","hex blast", "mortality", "soul gate"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -237,7 +237,7 @@ var data = {
                     "name": "Sorcier",
                     "spelllist":{
                         "initial":["crippling grasp", "ghost walk", "hellfire", "infernal machine", "occultation", "scything touch", "vanish", "venom"],
-                        "acquired":["dark guidance, death ward, hex blast, soul gate, telekenesis"]
+                        "extended":["dark guidance, death ward, hex blast, soul gate, telekenesis"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -344,7 +344,7 @@ var data = {
                     "name": "Arcanist",
                     "spelllist":{
                         "initial":["arcane blast", "arcane bolt", "arcane shield", "blur", "chain lightning", "lightning shroud", "mage sight", "polarity shield"],
-                        "acquired":["deceleration", "full throttle", "telekenesis", "teleport", "thunder strike"]
+                        "extended":["deceleration", "full throttle", "telekenesis", "teleport", "thunder strike"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -451,7 +451,7 @@ var data = {
                     "name": "Combattant",
                     "spelllist":{
                         "initial":["arcane bolt", "arcane shield", "blur", "deadeye", "mage sight", "positive charge", "rebuke", "snipe"],
-                        "acquired":["deceleration, full throttle", "guided fire", "onslaught", "thunder-strike"]
+                        "extended":["deceleration, full throttle", "guided fire", "onslaught", "thunder-strike"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -558,7 +558,7 @@ var data = {
                     "name": "Gun Mage",
                     "spelllist":{
                         "initial":["arcane bolt", "blur", "calamity", "deadeye", "energizer", "fire group", "mage sight", "snipe"],
-                        "acquired":["deceleration", "guided fire", "telekenesis", "teleport", "thunder strike"]
+                        "extended":["deceleration", "guided fire", "telekenesis", "teleport", "thunder strike"]
                     }, 
                     "hp":"8",
                     "stats": {
