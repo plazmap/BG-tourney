@@ -83,81 +83,78 @@ function descriptorUpdate(){
         var weapons = data.faction[currentchar.faction].archetypes[currentchar.archetype].weapons.initial;
         Object.keys(weapons).forEach(weaponkey => {
 
-            var name = document.createElement("p");
-            name.innerHTML = weapons[weaponkey].name;
-            name.classList.add("sub-name");
-            var weaponbox = document.createElement("div");
-            weaponbox.classList.add("sub-wrapper");
-            weaponbox.appendChild(name);
+            weaponsbox.appendChild(createWeapon(weaponkey));
+            // var name = document.createElement("p");
+            // name.innerHTML = weapons[weaponkey].name;
+            // name.classList.add("sub-name");
+            // var weaponbox = document.createElement("div");
+            // weaponbox.classList.add("sub-wrapper");
+            // weaponbox.appendChild(name);
 
-            weaponstatsbox = document.createElement("div");
-            weaponstatsbox.classList.add("wrapper4");
+            // weaponstatsbox = document.createElement("div");
+            // weaponstatsbox.classList.add("wrapper4");
 
-            var typewrapper = document.createElement("div");
-            var RNGwrapper = document.createElement("div");
-            var POWwrapper = document.createElement("div");
-            var PSwrapper = document.createElement("div");
-            typewrapper.classList.add("wrapper3");
-            RNGwrapper.classList.add("wrapper3");
-            POWwrapper.classList.add("wrapper3");
-            PSwrapper.classList.add("wrapper3");
-            
-            var typename = document.createElement("p");
-            typename.classList.add("stat-name");
-            typename.innerHTML = "type";
-            typewrapper.appendChild(typename);
+            // var typewrapper = document.createElement("div");
+            // typewrapper.classList.add("wrapper3");
+            // var typename = document.createElement("p");
+            // typename.classList.add("stat-name");
+            // typename.innerHTML = "type";
+            // typewrapper.appendChild(typename);
+            // var typevalue = document.createElement("p");
+            // typevalue.classList.add("stat");
+            // typevalue.innerHTML = weapons[weaponkey].type;
+            // typewrapper.appendChild(typevalue);
 
-            var RNGname = document.createElement("p");
-            RNGname.classList.add("stat-name");
-            RNGname.innerHTML = "RNG";
-            RNGwrapper.appendChild(RNGname);
+            // var RNGwrapper = document.createElement("div");
+            // RNGwrapper.classList.add("wrapper3");
+            // var RNGname = document.createElement("p");
+            // RNGname.classList.add("stat-name");
+            // RNGname.innerHTML = "RNG";
+            // RNGwrapper.appendChild(RNGname);
+            // var RNGvalue = document.createElement("p");
+            // RNGvalue.classList.add("stat");
+            // RNGvalue.innerHTML = weapons[weaponkey].RNG;
+            // RNGwrapper.appendChild(RNGvalue);
 
-            var POWname = document.createElement("p");
-            POWname.classList.add("stat-name");
-            POWname.innerHTML = "POW";
-            POWwrapper.appendChild(POWname);
+            // var POWwrapper = document.createElement("div");
+            // POWwrapper.classList.add("wrapper3");
+            // var POWname = document.createElement("p");
+            // POWname.classList.add("stat-name");
+            // POWname.innerHTML = "POW";
+            // POWwrapper.appendChild(POWname);
+            // var POWvalue = document.createElement("p");
+            // POWvalue.classList.add("stat");
+            // POWvalue.innerHTML = weapons[weaponkey].POW;
+            // POWwrapper.appendChild(POWvalue);
 
-            var PSname = document.createElement("p");
-            PSname.classList.add("stat-name");
-            PSname.innerHTML = "PS";
-            PSwrapper.appendChild(PSname);
+            // var PSwrapper = document.createElement("div");
+            // PSwrapper.classList.add("wrapper3");
+            // var PSname = document.createElement("p");
+            // PSname.classList.add("stat-name");
+            // PSname.innerHTML = "PS";
+            // PSwrapper.appendChild(PSname);
+            // var PSvalue = document.createElement("p");
+            // PSvalue.classList.add("stat");
+            // var PS = parseInt(weapons[weaponkey].POW) + parseInt(data.faction[currentchar.faction].archetypes[currentchar.archetype].stats.STR);
+            // PSvalue.innerHTML = PS ;
+            // PSwrapper.appendChild(PSvalue);
 
-            var typevalue = document.createElement("p");
-            typevalue.classList.add("stat");
-            typevalue.innerHTML = weapons[weaponkey].type;
-            typewrapper.appendChild(typevalue);
+            // weaponstatsbox.appendChild(typewrapper);
+            // weaponstatsbox.appendChild(RNGwrapper);
+            // weaponstatsbox.appendChild(POWwrapper);
+            // weaponstatsbox.appendChild(PSwrapper);
 
-            var RNGvalue = document.createElement("p");
-            RNGvalue.classList.add("stat");
-            RNGvalue.innerHTML = weapons[weaponkey].RNG;
-            RNGwrapper.appendChild(RNGvalue);
-
-            var POWvalue = document.createElement("p");
-            POWvalue.classList.add("stat");
-            POWvalue.innerHTML = weapons[weaponkey].POW;
-            POWwrapper.appendChild(POWvalue);
-
-            var PSvalue = document.createElement("p");
-            PSvalue.classList.add("stat");
-            PSvalue.innerHTML = weapons[weaponkey].PS;
-            PSwrapper.appendChild(PSvalue);
-
-            weaponstatsbox.appendChild(typewrapper);
-            weaponstatsbox.appendChild(RNGwrapper);
-            weaponstatsbox.appendChild(POWwrapper);
-            weaponstatsbox.appendChild(PSwrapper);
-
-            weaponbox.appendChild(weaponstatsbox);
+            // weaponbox.appendChild(weaponstatsbox);
         
 
-            if(weapons[weaponkey].description != "none"){
-                var description = document.createElement("p");
-                description.innerHTML = weapons[weaponkey].description;
-                description.classList.add("sub-description");
-                weaponbox.appendChild(description);
-            }
+            // if(weapons[weaponkey].description != "none"){
+            //     var description = document.createElement("p");
+            //     description.innerHTML = weapons[weaponkey].description;
+            //     description.classList.add("sub-description");
+            //     weaponbox.appendChild(description);
+            // }
             
-            weaponsbox.appendChild(weaponbox);
+            // weaponsbox.appendChild(weaponbox);
         });
 
 

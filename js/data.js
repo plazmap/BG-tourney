@@ -53,7 +53,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"0.5",
                                 "POW":"3",
-                                "PS":"8",
+                                "PS":"",
                                 "description":"none"
                             },
                             "hand cannon":{
@@ -72,7 +72,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Life Drinker (quand un ennemi vivant est détruit avec cette arme, le porteur est soigné de d3 points de dommage)"
                             },
                             "vicious blade":{
@@ -80,7 +80,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Sustained Attack (pendant l'activation du porteur, la dernière figurine touchée par cette arme est automatiquement touchée à nouveau par cette arme)"
                             },
                             "heavy riffle":{
@@ -167,7 +167,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"0.5",
                                 "POW":"5",
-                                "PS":"12",
+                                "PS":"",
                                 "description":"none"
                             }
                         },
@@ -177,7 +177,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Life Drinker (quand un ennemi vivant est détruit avec cette arme, le porteur est soigné de d3 points de dommage)"
                             },
                             "vicious blade":{
@@ -185,7 +185,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Sustained Attack (pendant l'activation du porteur, la dernière figurine touchée par cette arme est automatiquement touchée à nouveau par cette arme)"
                             },
                             "necromantic blade":{
@@ -193,7 +193,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Soul Eater (quand un ennemi vivant est détruit avec cette arme, le porteur gagne un compteur soul. Quand le porteur récupère son focus, 1 soul = 1 focus)"
                             }
                         }
@@ -271,7 +271,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"6",
-                                "PS":"10",
+                                "PS":"",
                                 "description":"Shadow Bind : une figurine touchée subit -3 DEF et ne peut plus se déplacer sauf pour changer d'orientation"
                             }
                         },
@@ -281,7 +281,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Life Drinker (quand un ennemi vivant est détruit avec cette arme, le porteur est soigné de d3 points de dommage)"
                             },
                         
@@ -290,7 +290,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"8",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"magical, Soul Eater (quand un ennemi vivant est détruit avec cette arme, le porteur gagne un compteur soul. Quand le porteur récupère son focus, 1 soul = 1 focus)"
                             },
                             "necro riffle":{
@@ -378,7 +378,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"0.5",
                                 "POW":"5",
-                                "PS":"9",
+                                "PS":"",
                                 "description":"Magical."
                             },
                             "pistol":{
@@ -397,7 +397,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"7",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"Magical, Reach, Set Defense (une figurine dans l'arc avant du porteur subit -2 aux jets d'attaque de charge, de slam et d'impact) "
                             },
                             "magnum":{
@@ -485,7 +485,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"0.5",
                                 "POW":"5",
-                                "PS":"9",
+                                "PS":"",
                                 "description":"Magical."
                             },
                             "hand cannon":{
@@ -504,7 +504,7 @@ var data = {
                                 "type":"melee",
                                 "RNG":"2",
                                 "POW":"7",
-                                "PS":"none",
+                                "PS":"",
                                 "description":"Magical, Reach, Set Defense (une figurine dans l'arc avant du porteur subit -2 aux jets d'attaque de charge, de slam et d'impact) "
                             },
                             "magnum":{

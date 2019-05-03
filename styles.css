@@ -59,7 +59,7 @@
 .wrapper4{
     border-style: solid;
     color: lightblue;
-    width: 50%;
+    width :50%;
     display: flex;
     justify-content: space-between;
 }
