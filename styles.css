@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+    border-width: 1px;
+    }
+
 .error{
     visibility: hidden;
     color: red;
 }
-.wrapper{
+.selector-wrapper{
     display: flex;
     justify-content: space-around;
 }
@@ -20,9 +25,103 @@
 }
 
 .descriptor{
-    color: blue;
+    color: red;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.spells{
-    color: blue;
+.caster-header{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    border-style: solid;
+    color: lightgreen;
+}
+
+.caster-name{
+    border-style: solid;
+    color: green;
+}
+
+.caster-faction{
+    border-style: solid;
+    color: green;
+}
+
+.caster-archetype{
+    border-style: solid;
+    color: green;
+}
+
+.wrapper4{
+    border-style: solid;
+    color: lightblue;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper3{
+    border-style: solid;
+    color:blue;
+    display: flex;
+    flex-direction: column;
+}
+.stat-name{
+    border-style: solid;
+    color : lightcoral;
+}
+.caster-spells{
+    border-style: solid;
+    color: lightblue;
+    width:100%;
+}
+
+.stat{
+    text-align: center;
+}
+
+.wrapper1{
+    border-style: solid;
+    color: lightblue;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-title{
+    font-style: italic;
+}
+
+.wrapper2{
+    width:30%;
+    border-style: solid;
+    color:blue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sub-wrapper{
+    width: 100%;
+    border-style: solid;
+    color: darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sub-name{
+    border-style: solid;
+    color: black;
+    font-weight : bold;
+}
+
+.sub-description{
+    border-style: solid;
+    color:black;
 }

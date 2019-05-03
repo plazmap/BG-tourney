@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css" />
     </head>
   <body>
-    <div class="wrapper">
+    <div class="selector-wrapper">
       <div class="constructor">
         <label>Your Warcaster's name :<br>
           <input type="text" id = "name-selector"></label>
@@ -48,15 +48,69 @@
       </div>
     </div>
     <div class="descriptor">
-      <div class="stats"></div>
-      <div class="wrapper">
-        
+      <div class ="caster-header">
+        <div class="caster-name">
+          <p>Unkown Warcarster</p>
+        </div>
+        <div class="caster-archetype">
+            <p>Unkown Archetype</p>
+          </div>
+        <div class="caster-faction">
+            <p>No allegiance. Yet.</p>
+        </div>
       </div>
-
+      <div class="wrapper4" id="caster-stats">
+        <div class="wrapper3">
+          <p class="stat-name">SPD</p>
+          <p class="stat" id="SPD"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">STR</p>
+          <p class="stat" id="STR"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">MAT</p>
+          <p class="stat" id="MAT"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">RAT</p>
+          <p class="stat" id="RAT"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">DEF</p>
+          <p class="stat" id="DEF"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">ARM</p>
+          <p class="stat" id="ARM"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">CMD</p>
+          <p class="stat" id="CMD"></p>
+        </div>
+        <div class="wrapper3">
+          <p class="stat-name">FOC</p>
+          <p class="stat" id="FOC"></p>
+        </div>
+      </div>
+      <div class="wrapper1">
+        <div class="wrapper2" id="caster-capacities">
+          <p class="sub-title">Capacities :</p>
+        </div>
+        <div class="wrapper2" id="caster-weapons">
+          <p class="sub-title">Weapons :</p>
+        </div>
+        <div class="wrapper2" id="caster-feat">
+          <p class="sub-title">Feat :</p>
+        </div>
+      </div>
+      <div class="caster-spells">
+        <p class="sub-title">Spells :</p>
+      </div>
     </div>
   
 
-    <p class="descriptor temporary"></p><br />
+    <!-- <p class="descriptor temporary"></p><br /> -->
     <p class="spells temporary"></p>
    
     <script src="js/functions.js"></script>

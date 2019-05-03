@@ -30,7 +30,7 @@ var data = {
                         "DEF":"16",
                         "ARM":"15",
                         "CMD":"8",
-                        "FOCUS":"4"
+                        "FOC":"4"
                     },
                     "feats":{
                         "boarding action":{
@@ -144,7 +144,7 @@ var data = {
                         "DEF":"13",
                         "ARM":"17",
                         "CMD":"8",
-                        "FOCUS":"5"
+                        "FOC":"5"
                     },
                     "feats":{
                         "dragon's call":{
@@ -248,7 +248,7 @@ var data = {
                         "DEF":"16",
                         "ARM":"14",
                         "CMD":"8",
-                        "FOCUS":"5"
+                        "FOC":"5"
                     },
                     "feats":{
                         "black guate":{
@@ -355,7 +355,7 @@ var data = {
                         "DEF":"15",
                         "ARM":"15",
                         "CMD":"8",
-                        "FOCUS":"5"
+                        "FOC":"5"
                     },
                     "feats":{
                         "electrical storm":{
@@ -388,7 +388,7 @@ var data = {
                                 "ROF":"1",
                                 "AOE":"none",
                                 "POW":"10",
-                                "description":""
+                                "description":"none"
                             }
                         },
                         "acquired":{
@@ -462,7 +462,7 @@ var data = {
                         "DEF":"15",
                         "ARM":"16",
                         "CMD":"8",
-                        "FOCUS":"4"
+                        "FOC":"4"
                     },
                     "feats":{
                         "invicibility":{
@@ -569,7 +569,7 @@ var data = {
                         "DEF":"16",
                         "ARM":"14",
                         "CMD":"8",
-                        "FOCUS":"4"
+                        "FOC":"4"
                     },
                     "feats":{
                         "light em up":{

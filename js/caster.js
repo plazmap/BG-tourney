@@ -5,7 +5,8 @@ function caster() {
     this.faction;
     this.archetype;
     this.capacities =[];
-    this.spells = []; 
+    this.spells = [];
+    this.feat; 
   }
   
 //Initiate new caster.
@@ -31,7 +32,6 @@ document.addEventListener("select:archetype", function(e) {
 
 document.addEventListener("select:capacity", function(e) {
     currentchar.capacities[0] = e.detail.capacitykey;
-    console.log(currentchar.capacities);
 });
 
 document.addEventListener("select:spell", function(e) {
