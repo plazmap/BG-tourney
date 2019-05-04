@@ -9,9 +9,8 @@ function descriptorUpdate(){
     var archetypebox = document.querySelector(".caster-archetype");
     var capacitiesbox = document.querySelector("#caster-capacities");
     var weaponsbox = document.querySelector("#caster-weapons");
-    var featbox = document.querySelector("#caster-feat");
-    var spellsbox = document.querySelector(".caster-spells");
-
+    var spellsbox = document.querySelector("#caster-spells");
+    var featbox = document.querySelector(".caster-feat");
 
     //Display name.
 
@@ -64,23 +63,9 @@ function descriptorUpdate(){
         subtitle.innerHTML = "Capacities";
         capacitiesbox.appendChild(subtitle);
 
-
-
-
         var capacities = data.faction[currentchar.faction].archetypes[currentchar.archetype].capacities.initial;
         Object.keys(capacities).forEach(capacitykey => {
-            var name = document.createElement("p");
-            var description = document.createElement("p");
-            name.classList.add("sub-name");
-            description.classList.add("sub-description");
-            name.innerHTML = capacities[capacitykey].name;
-            description.innerHTML = capacities[capacitykey].description;
-
-            var capacitybox = document.createElement("div");
-            capacitybox.classList.add("sub-wrapper");
-            capacitybox.appendChild(name);
-            capacitybox.appendChild(description);
-            capacitiesbox.appendChild(capacitybox);
+            capacitiesbox.appendChild(createCapacity("initial", capacitykey));
         });
     
         //Display initial weapons.
@@ -101,21 +86,31 @@ function descriptorUpdate(){
     }else{ archetypebox.innerHTML = "No allegiance yet.";
     }   
 
-    //Add additionnal capacity when selected;
+    //Add additionnal capacity when selected.
     
     if (currentchar.capacities[0]){
        capacitiesbox.appendChild(createCapacity("acquired", currentchar.capacities[0]));
     }
+
+    //Add spell when they are selected. 
+
+    if (currentchar.spells[0]){
+
+        deleteChildren("#caster-spells");
+        var subtitle = document.createElement("p");
+        subtitle.classList.add("sub-title");
+        subtitle.innerHTML = "Spells";
+        spellsbox.appendChild(subtitle);
+
+        currentchar.spells.forEach(spellkey => {
+            spellsbox.appendChild(createSpell(spellkey));
+        });
+    }
+
 }
 
 
-
-
-
-
-
-
-
+// OLD STUFF : 
 
 
 

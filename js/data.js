@@ -11,6 +11,98 @@
 // });
 
 var data = {
+    "spells": {
+        "admonition":{
+            "name":"Admonition",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Quand une figurine ennemie avance et finit dans les 6'' de la figurine ciblée du battlegroup, la figurine affectée peut immédiatement avancer jusqu'à 3'. Elle ne peut pas être ciblée par des free strikes pendant ce mouvement."
+        },
+        "bleed":{
+            "name":"Bleed",
+            "COST":"2",
+            "RNG":"8",
+            "AOE":"",
+            "POW":"10",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Quand ce sort endommage une figurine vivante, le lanceur peut se retirer d3 points de dommage."
+        },
+        "carnage":{
+            "name":"Carnage",
+            "COST":"2",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Les figurines alliées de la Faction gagnent +2 aux jets d'attaque de mêlée contre les ennemis qui sont dans la Zone de Contrôle. Dure 1 turn."
+        },
+        "ghost walk":{
+            "name":"Ghost Walk",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"La figurine/unité alliée ciblée gagne Ghostly pendant un turn."
+        },
+        "grave wind":{
+            "name":"Grave Wind",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine alliée de la Faction gagne +2 DEF et Poltergeist (quand une attaque est ratée contre elle, l'attaquant est poussé de d3'' à l'opposé)."
+        },
+        "infernal machine":{
+            "name":"Infernal Machine",
+            "COST":"3",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Le warjack ciblé du battlegroup gagne Murderous et +2 SPD (il gagne un dé additionnel pour les attaques de mêlée contre un guerrier)."
+        },
+        "occultation":{
+            "name":"Occultation",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine/unité alliée ciblée gagne Stealth, sauf les figurines hors formation."
+        },
+        "scything touch":{
+            "name":"Scything Touch",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine alliée de la Faction gagne Dark Shroud (dans sa zone de mêlée, les figurines ennemies subissent -2 ARM)."
+        },
+        "plop":{
+            "name":"",
+            "COST":"",
+            "RNG":"",
+            "AOE":"",
+            "POW":"",
+            "UP":"",
+            "OFF":"",
+            "description":""
+        }
+    },
     "faction": {
         "cryx": {
             "name": "Cryx Empire",
@@ -18,7 +110,7 @@ var data = {
                 "pirate": {
                     "name": "Pirate",
                     "spelllist":{
-                        "initial":["admonition", "bleed", "carnage", "ghost Walk", "grave Wind", "infernal Machine", "occultation", "scything Touch"],
+                        "initial":["admonition", "bleed", "carnage", "ghost walk", "grave wind", "infernal machine", "occultation", "scything touch"],
                         "extended":["dash","deceleration","death ward", "hex blast", "telekenis"]
                     }, 
                     "hp":"8",
@@ -133,7 +225,7 @@ var data = {
                     "name": "Iron Lich",
                     "spelllist":{
                         "initial":["blood rain", "curse of shadows", "ghost walk", "hellfire", "infernal machine", "parasite", "scything touch", "stranglehold"],
-                        "extended":["Death Ward","excarnate","hex blast", "mortality", "soul gate"]
+                        "extended":["death ward","excarnate","hex blast", "mortality", "soul gate"]
                     }, 
                     "hp":"8",
                     "stats": {

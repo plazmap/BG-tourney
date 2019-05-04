@@ -59,12 +59,16 @@
 .wrapper4{
     border-style: solid;
     color: lightblue;
-    width :50%;
+    width :70%;
+    justify-content: space-around;
     display: flex;
-    justify-content: space-between;
 }
 
-.wrapper3{
+#caster-stats{
+    width: 50%;
+}
+
+.wrapper5{
     border-style: solid;
     color:blue;
     display: flex;
@@ -74,7 +78,7 @@
     border-style: solid;
     color : lightcoral;
 }
-.caster-spells{
+.caster-feat{
     border-style: solid;
     color: lightblue;
     width:100%;
