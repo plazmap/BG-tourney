@@ -3,6 +3,7 @@
 // Update descriptor everytime something is selected. 
 
 function descriptorUpdate(){
+
     var namebox = document.querySelector(".caster-name");
     var factionbox = document.querySelector(".caster-faction");
     var archetypebox = document.querySelector(".caster-archetype");
@@ -11,16 +12,23 @@ function descriptorUpdate(){
     var featbox = document.querySelector("#caster-feat");
     var spellsbox = document.querySelector(".caster-spells");
 
+
+    //Display name.
+
     if (currentchar.name){
         namebox.innerHTML=currentchar.name;
     }else{ namebox.innerHTML="Unidentified Warcaster";
     }
+
+    //Display faction.
 
     if(currentchar.faction){
         var faction = data.faction[currentchar.faction].name;
         factionbox.innerHTML = faction;
     }else{ factionbox.innerHTML = "No allegiance yet.";
     }   
+
+    //When archetype is selected, major changes occur : 
 
     if(currentchar.archetype){
 
@@ -56,6 +64,9 @@ function descriptorUpdate(){
         subtitle.innerHTML = "Capacities";
         capacitiesbox.appendChild(subtitle);
 
+
+
+
         var capacities = data.faction[currentchar.faction].archetypes[currentchar.archetype].capacities.initial;
         Object.keys(capacities).forEach(capacitykey => {
             var name = document.createElement("p");
@@ -71,8 +82,8 @@ function descriptorUpdate(){
             capacitybox.appendChild(description);
             capacitiesbox.appendChild(capacitybox);
         });
-
-        //Display initial weapons
+    
+        //Display initial weapons.
 
         deleteChildren("#caster-weapons");
         var subtitle = document.createElement("p");
@@ -83,85 +94,19 @@ function descriptorUpdate(){
         var weapons = data.faction[currentchar.faction].archetypes[currentchar.archetype].weapons.initial;
         Object.keys(weapons).forEach(weaponkey => {
 
-            weaponsbox.appendChild(createWeapon(weaponkey));
-            // var name = document.createElement("p");
-            // name.innerHTML = weapons[weaponkey].name;
-            // name.classList.add("sub-name");
-            // var weaponbox = document.createElement("div");
-            // weaponbox.classList.add("sub-wrapper");
-            // weaponbox.appendChild(name);
-
-            // weaponstatsbox = document.createElement("div");
-            // weaponstatsbox.classList.add("wrapper4");
-
-            // var typewrapper = document.createElement("div");
-            // typewrapper.classList.add("wrapper3");
-            // var typename = document.createElement("p");
-            // typename.classList.add("stat-name");
-            // typename.innerHTML = "type";
-            // typewrapper.appendChild(typename);
-            // var typevalue = document.createElement("p");
-            // typevalue.classList.add("stat");
-            // typevalue.innerHTML = weapons[weaponkey].type;
-            // typewrapper.appendChild(typevalue);
-
-            // var RNGwrapper = document.createElement("div");
-            // RNGwrapper.classList.add("wrapper3");
-            // var RNGname = document.createElement("p");
-            // RNGname.classList.add("stat-name");
-            // RNGname.innerHTML = "RNG";
-            // RNGwrapper.appendChild(RNGname);
-            // var RNGvalue = document.createElement("p");
-            // RNGvalue.classList.add("stat");
-            // RNGvalue.innerHTML = weapons[weaponkey].RNG;
-            // RNGwrapper.appendChild(RNGvalue);
-
-            // var POWwrapper = document.createElement("div");
-            // POWwrapper.classList.add("wrapper3");
-            // var POWname = document.createElement("p");
-            // POWname.classList.add("stat-name");
-            // POWname.innerHTML = "POW";
-            // POWwrapper.appendChild(POWname);
-            // var POWvalue = document.createElement("p");
-            // POWvalue.classList.add("stat");
-            // POWvalue.innerHTML = weapons[weaponkey].POW;
-            // POWwrapper.appendChild(POWvalue);
-
-            // var PSwrapper = document.createElement("div");
-            // PSwrapper.classList.add("wrapper3");
-            // var PSname = document.createElement("p");
-            // PSname.classList.add("stat-name");
-            // PSname.innerHTML = "PS";
-            // PSwrapper.appendChild(PSname);
-            // var PSvalue = document.createElement("p");
-            // PSvalue.classList.add("stat");
-            // var PS = parseInt(weapons[weaponkey].POW) + parseInt(data.faction[currentchar.faction].archetypes[currentchar.archetype].stats.STR);
-            // PSvalue.innerHTML = PS ;
-            // PSwrapper.appendChild(PSvalue);
-
-            // weaponstatsbox.appendChild(typewrapper);
-            // weaponstatsbox.appendChild(RNGwrapper);
-            // weaponstatsbox.appendChild(POWwrapper);
-            // weaponstatsbox.appendChild(PSwrapper);
-
-            // weaponbox.appendChild(weaponstatsbox);
-        
-
-            // if(weapons[weaponkey].description != "none"){
-            //     var description = document.createElement("p");
-            //     description.innerHTML = weapons[weaponkey].description;
-            //     description.classList.add("sub-description");
-            //     weaponbox.appendChild(description);
-            // }
+            weaponsbox.appendChild(createWeapon("initial", weaponkey));
             
-            // weaponsbox.appendChild(weaponbox);
         });
-
 
     }else{ archetypebox.innerHTML = "No allegiance yet.";
     }   
-}
 
+    //Add additionnal capacity when selected;
+    
+    if (currentchar.capacities[0]){
+       capacitiesbox.appendChild(createCapacity("acquired", currentchar.capacities[0]));
+    }
+}
 
 
 
@@ -198,6 +143,7 @@ function descriptorUpdate(){
 document.addEventListener("select:name", descriptorUpdate);
 document.addEventListener("select:faction", descriptorUpdate);
 document.addEventListener("select:archetype", descriptorUpdate);
+document.addEventListener("select:capacity", descriptorUpdate);
 document.addEventListener("select:spell", descriptorUpdate);
 
 

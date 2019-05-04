@@ -4,7 +4,7 @@ function caster() {
     this.name;
     this.faction;
     this.archetype;
-    this.capacities =[];
+    this.capacities = [];
     this.spells = [];
     this.feat; 
   }
@@ -22,11 +22,13 @@ document.addEventListener("select:name", function(e) {
 document.addEventListener("select:faction", function(e) {  
     currentchar.faction = e.detail.factionkey;
     currentchar.archetype=undefined;
+    currentchar.capacities=[];
     currentchar.spells=[];
 });
 
 document.addEventListener("select:archetype", function(e) {
     currentchar.archetype = e.detail.archetypekey;
+    currentchar.capacities=[];
     currentchar.spells=[];
 });
 
