@@ -4,6 +4,8 @@
 
 function descriptorUpdate(){
 
+
+
     var namebox = document.querySelector(".caster-name");
     var factionbox = document.querySelector(".caster-faction");
     var archetypebox = document.querySelector(".caster-archetype");
@@ -11,11 +13,12 @@ function descriptorUpdate(){
     var weaponsbox = document.querySelector("#caster-weapons");
     var spellsbox = document.querySelector("#caster-spells");
     var featbox = document.querySelector(".caster-feat");
-
+    
     //Display name.
 
     if (currentchar.name){
         namebox.innerHTML=currentchar.name;
+        
     }else{ namebox.innerHTML="Unidentified Warcaster";
     }
 
@@ -83,7 +86,19 @@ function descriptorUpdate(){
             
         });
 
-    }else{ archetypebox.innerHTML = "No allegiance yet.";
+    }else{        
+        archetypebox.innerHTML = "No allegiance yet.";
+
+        //Remove stats in caster stats
+
+        deleteChildren(".stat");
+        
+        //Remove all weapons, capacities and spells
+
+        var todelete = document.querySelectorAll(".sub-wrapper");
+        todelete.forEach(td => {
+            td.parentNode.removeChild(td);
+        });
     }   
 
     //Add additionnal capacity when selected.
@@ -140,7 +155,3 @@ document.addEventListener("select:faction", descriptorUpdate);
 document.addEventListener("select:archetype", descriptorUpdate);
 document.addEventListener("select:capacity", descriptorUpdate);
 document.addEventListener("select:spell", descriptorUpdate);
-
-
-
-
