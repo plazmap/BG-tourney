@@ -106,9 +106,11 @@ var data = {
     "faction": {
         "cryx": {
             "name": "Cryx Empire",
+            "description": "The good guyz. If you disagree, you can't handle the thruth bruh.",
             "archetypes": {
                 "pirate": {
                     "name": "Pirate",
+                    "description": "Bad ass pirate goes \"yaaaar\". Black powder and rhum included.",
                     "spelllist":{
                         "initial":["admonition", "bleed", "carnage", "ghost walk", "grave wind", "infernal machine", "occultation", "scything touch"],
                         "extended":["dash","deceleration","death ward", "hex blast", "telekenis"]
@@ -223,6 +225,7 @@ var data = {
                 },
                 "liche": {
                     "name": "Iron Lich",
+                    "description":"Immortal giant half-mechanical badass, who slings spells.",
                     "spelllist":{
                         "initial":["blood rain", "curse of shadows", "ghost walk", "hellfire", "infernal machine", "parasite", "scything touch", "stranglehold"],
                         "extended":["death ward","excarnate","hex blast", "mortality", "soul gate"]
@@ -327,6 +330,7 @@ var data = {
                 },
                 "sorcier": {
                     "name": "Sorcier",
+                    "description":"Likes your soul. Yummy.",
                     "spelllist":{
                         "initial":["crippling grasp", "ghost walk", "hellfire", "infernal machine", "occultation", "scything touch", "vanish", "venom"],
                         "extended":["dark guidance, death ward, hex blast, soul gate, telekenesis"]
@@ -431,9 +435,11 @@ var data = {
         },
         "cygnar": {
             "name": "Cygnar Empire",
+            "description": "Evil imperialists with stupid zappy stuff.",
             "archetypes": {
                 "arcaniste": {
                     "name": "Arcanist",
+                    "description":"Likes zappy toys, and emo haircuts.",
                     "spelllist":{
                         "initial":["arcane blast", "arcane bolt", "arcane shield", "blur", "chain lightning", "lightning shroud", "mage sight", "polarity shield"],
                         "extended":["deceleration", "full throttle", "telekenesis", "teleport", "thunder strike"]
@@ -541,6 +547,7 @@ var data = {
                 },
                 "combattant": {
                     "name": "Combattant",
+                    "description":"Sure they can fight. For a couple decades, then it's all ''booohooo I'm old and slow''. Pathetic.",
                     "spelllist":{
                         "initial":["arcane bolt", "arcane shield", "blur", "deadeye", "mage sight", "positive charge", "rebuke", "snipe"],
                         "extended":["deceleration, full throttle", "guided fire", "onslaught", "thunder-strike"]
@@ -648,6 +655,7 @@ var data = {
                 },
                 "gun mage": {
                     "name": "Gun Mage",
+                    "description":"Great heroes of mankind who enjoys staying as far away as possible from actual fights.",
                     "spelllist":{
                         "initial":["arcane bolt", "blur", "calamity", "deadeye", "energizer", "fire group", "mage sight", "snipe"],
                         "extended":["deceleration", "guided fire", "telekenesis", "teleport", "thunder strike"]
