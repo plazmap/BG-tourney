@@ -6,41 +6,56 @@
     <link rel="stylesheet" href="styles.css" />
     </head>
   <body>
+    <div class ="level-tabs">
+      <button id ="tablevel1" value="0">Initial Choices</button>
+      <button id ="tablevel2" value="1">First level up</button>
+      <button id ="tablevel3" value="2">Second level up</button>
+    </div>
     <div class="selector-wrapper">
       <div class="constructor">
-        <label>Your Warcaster's name :<br>
-          <input type="text" id = "name-selector"></label>
-          <span class="error" id="errorname">Your Warcaster's name must be 2 letters long at least.</span>
-          <br><br>
-        <label>Chose your faction (better be Cryx, Weakling) :<br /><br />
-          <select class ="selector faction-selector">
-          </select>
-        </label>
-        <br /><br />
-
-        <label>Chose your caster type :<br /><br />
-          <select class="selector archetype-selector"> 
-          </select>
-        </label>
-        <br /><br />
-
-        <label>Chose your initial capacity :<br /><br />
-          <select class="selector capacity-selector"> 
-          </select>
-        </label>
-        <br /><br />
-
-        <label>Chose your starting spells :<br /><br />
-          <select class="selector spell-selector"> 
-          </select>
-          <br /><br />
-          <select class="selector spell-selector"> 
-          </select>
-          <br /><br />
-          <select class="selector spell-selector"> 
-          </select>
+        <div class="level-0">
+          <label>Your Warcaster's name :<br>
+            <input type="text" id = "name-selector"></label>
+            <span class="error" id="errorname">Your Warcaster's name must be 2 letters long at least.</span>
+            <br><br>
+          <label>Chose your faction (better be Cryx, Weakling) :<br /><br />
+            <select class ="selector faction-selector">
+            </select>
           </label>
           <br /><br />
+
+          <label>Chose your caster type :<br /><br />
+            <select class="selector archetype-selector"> 
+            </select>
+          </label>
+          <br /><br />
+
+          <label>Chose your initial capacity :<br /><br />
+            <select class="selector capacity-selector"> 
+            </select>
+          </label>
+          <br /><br />
+
+          <label>Chose your starting spells :<br /><br />
+            <select class="selector spell-selector"> 
+            </select>
+            <br /><br />
+            <select class="selector spell-selector"> 
+            </select>
+            <br /><br />
+            <select class="selector spell-selector"> 
+            </select>
+          </label>
+          <br /><br />
+        </div>
+        <div class="level-1">
+          <select class="selector" name="plop" id="azafa">asfasf</select>
+          <p>Plop1</p>
+        </div>
+        <div class="level-2">
+            <select class="selector" name="pdsqop" id="azafqsda">asfasqdsf</select>
+            <p>Plop2</p>
+          </div>
       </div>
 
       <div class="helper">
@@ -115,9 +130,11 @@
     <script src="js/data.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/caster.js"></script>
-    <script src="js/selector.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/selector_lvl_0.js"></script>
     <script src="js/descriptor.js"></script>
     <script src="js/helper.js"></script>
+    
    
   </body>
 </html>

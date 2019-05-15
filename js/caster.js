@@ -7,11 +7,13 @@ function caster() {
     this.capacities = [];
     this.spells = [];
     this.feat; 
+    this.level;
   }
   
 //Initiate new caster.
 
 var currentchar = new caster();
+currentchar.level = 0;
 
 //Update Caster Object every time something is selected.
 
@@ -45,4 +47,9 @@ document.addEventListener("select:spell", function(e) {
         }
     })
 });
+
+
+
+
+
 

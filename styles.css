@@ -1,26 +1,30 @@
 * {
     box-sizing: border-box;
     border-width: 1px;
-    }
-
-.error{
-    visibility: hidden;
-    color: red;
 }
+
+.level-header{
+    width: 100%;
+    border-style: solid;
+    color : violet;
+    display :flex;
+    justify-content: start;
+}
+
 .selector-wrapper{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .constructor{
     border-style: solid;
-    width:45%;
-   
+    width:60%;
 }
 
 .helper{
     border-style: solid;
-    width:45%;
+    width : 30%;
     display :flex;
     flex-direction: column;
     justify-content: start;

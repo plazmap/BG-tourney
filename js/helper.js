@@ -6,7 +6,8 @@ selectors.forEach(selector => {
 
     //First we empty the helper when hovering over any selector. 
     deleteChildren(helper);
-
+    console.log(tabselected);
+   
     //Then, depending on which selector, we display different infos. 
 
     if (selector.classList.contains("faction-selector")){
@@ -77,7 +78,7 @@ selectors.forEach(selector => {
         factionkey=currentchar.faction;
         archetypekey = currentchar.archetype;
         data.faction[factionkey].archetypes[archetypekey].spelllist.initial.forEach(spellkey => {
-          console.log(spellkey);
+      
           spell = document.createElement("div");
           spell.classList.add("sub-wrapper");
 

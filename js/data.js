@@ -1,15 +1,3 @@
-// var xhr = new XMLHttpRequest();
-// xhr.open('GET', 'data.json');
-// xhr.send(null);
-
-// xhr.addEventListener('readystatechange', function() {
-//     if (xhr.readyState === 4) {
-//         console.log("plop");
-//     }else{
-//         alert('plop!');
-//     }
-// });
-
 var data = {
     "spells": {
         "admonition":{
