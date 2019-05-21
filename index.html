@@ -8,15 +8,14 @@
   <body>
     <div class ="level-tabs">
       <button id ="tablevel1" value="0">Initial Choices</button>
-      <button id ="tablevel2" value="1">First level up</button>
-      <button id ="tablevel3" value="2">Second level up</button>
+      <button id ="tablevel2" value="1">Level up</button>
+      <button id ="tablevel3" value="2">Register Games</button>
     </div>
     <div class="selector-wrapper">
       <div class="constructor">
         <div class="level-0">
           <label>Your Warcaster's name :<br>
             <input type="text" id = "name-selector"></label>
-            <span class="error" id="errorname">Your Warcaster's name must be 2 letters long at least.</span>
             <br><br>
           <label>Chose your faction (better be Cryx, Weakling) :<br /><br />
             <select class ="selector faction-selector">
@@ -49,28 +48,41 @@
           <br /><br />
         </div>
         <div class="level-1">
-          <select class="selector" name="plop" id="azafa">asfasf</select>
-          <p>Plop1</p>
+          <p>After certain millestones you grow more powerfull !</p>
+          <p class="level-1-error error">You must first finish character creation ! </p>
+          <div class="level-1-selectors">
+            <p class ="milestone"> After all 25 point games:</p>
+            <label>+1 FOCUS. You may chose an additionnal spell from the starting list, or a new capacity :<br /><br />
+              <select class="selector capacity-selector"> 
+              </select>
+            </label>
+          </div>
         </div>
         <div class="level-2">
-            <select class="selector" name="pdsqop" id="azafqsda">asfasqdsf</select>
-            <p>Plop2</p>
+          <p>Register your games for additionnal bonuses !</p>
+          <p class="level-2-error error">You must first finish character creation ! </p>
+          <div class="level-2-selectors">          
           </div>
+        </div>
       </div>
 
       <div class="helper">
   
       </div>
     </div>
+    <br /><br />
     <div class="descriptor">
       <div class ="caster-header">
-        <div class="caster-name">
+        <div class="caster-generic caster-name">
           <p>Unkown Warcarster</p>
         </div>
-        <div class="caster-archetype">
+        <div class="caster-generic caster-archetype">
             <p>Unkown Archetype</p>
-          </div>
-        <div class="caster-faction">
+        </div>
+        <div class="caster-generic caster-level">
+            <p>Scrub</p>
+        </div>
+        <div class="caster-generic caster-faction">
             <p>No allegiance. Yet.</p>
         </div>
       </div>
@@ -107,7 +119,18 @@
           <p class="stat-name">FOC</p>
           <p class="stat" id="FOC"></p>
         </div>
+        <div class="wrapper6">
+          <div class="wrapper7">
+            <p class="stat-name">Prestige:</p>
+            <p class="stat" id="PRE">0</p>
+          </div>
+          <div class="wrapper7">
+            <p class="stat-name">Carnage:</p>
+            <p class="stat" id="CAR">0</p>
+          </div>
+        </div>
       </div>
+      
       <div class="wrapper1">
         <div class="wrapper2" id="caster-capacities">
           <p class="sub-title">Capacities :</p>
@@ -131,7 +154,8 @@
     <script src="js/functions.js"></script>
     <script src="js/caster.js"></script>
     <script src="js/tabs.js"></script>
-    <script src="js/selector_lvl_0.js"></script>
+    <script src="js/selector_initial.js"></script>
+    <script src="js/selector_levelup.js"></script>
     <script src="js/descriptor.js"></script>
     <script src="js/helper.js"></script>
     

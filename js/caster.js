@@ -19,6 +19,7 @@ currentchar.level = 0;
 
 document.addEventListener("select:name", function(e) {
     currentchar.name = e.detail.name;
+    casterLevel();
 });
 
 document.addEventListener("select:faction", function(e) {  
@@ -26,16 +27,19 @@ document.addEventListener("select:faction", function(e) {
     currentchar.archetype=undefined;
     currentchar.capacities=[];
     currentchar.spells=[];
+    casterLevel();
 });
 
 document.addEventListener("select:archetype", function(e) {
     currentchar.archetype = e.detail.archetypekey;
     currentchar.capacities=[];
     currentchar.spells=[];
+    casterLevel()
 });
 
 document.addEventListener("select:capacity", function(e) {
     currentchar.capacities[0] = e.detail.capacitykey;
+    casterLevel();
 });
 
 document.addEventListener("select:spell", function(e) {
@@ -46,8 +50,17 @@ document.addEventListener("select:spell", function(e) {
             currentchar.spells.unshift(spellSelector.value);
         }
     })
+    casterLevel();
+    console.log(currentchar.level);
 });
 
+function casterLevel(){
+    if ((currentchar.name)&&(currentchar.faction)&&(currentchar.archetype)&&(currentchar.capacities)&&(currentchar.spells.length == 3)){
+        currentchar.level = 1;
+    }else {
+        currentchar.level = 0;
+    }
+}
 
 
 

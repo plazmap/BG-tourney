@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     border-width: 1px;
+    font-family: calibri;
 }
 
 .level-header{
@@ -12,19 +13,29 @@
 }
 
 .selector-wrapper{
+    min-height: 50VH;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .constructor{
     border-style: solid;
-    width:60%;
+    width:35%;
 }
+
+.level-1{
+    display:none;
+}
+
+.level-2{
+    display:none;
+}
+
 
 .helper{
     border-style: solid;
-    width : 30%;
+    width : 60%;
     display :flex;
     flex-direction: column;
     justify-content: start;
@@ -48,17 +59,7 @@
     color: lightgreen;
 }
 
-.caster-name{
-    border-style: solid;
-    color: green;
-}
-
-.caster-faction{
-    border-style: solid;
-    color: green;
-}
-
-.caster-archetype{
+.caster-generic{
     border-style: solid;
     color: green;
 }
@@ -135,4 +136,20 @@
 .sub-description{
     border-style: solid;
     color:black;
+}
+
+.wrapper6{
+    border-style: solid;
+    color: lightblue;
+}
+.wrapper7{
+    border-style: solid;
+    color:blue;
+    display: flex; 
+    display
+}
+
+.error{
+    font-weight : bold;
+    color : red;
 }
