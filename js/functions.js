@@ -9,12 +9,12 @@ function deleteChildren(selector){
         select.removeChild(select.firstChild);
       }
     });
-  }else if (selector[0]){
-      selector.forEach(select => {
-        while (select.firstChild) { 
-          select.removeChild(select.firstChild);
-        }    
-      });
+  // }else if (selector[0]){
+  //     selector.forEach(select => {
+  //       while (select.firstChild) { 
+  //         select.removeChild(select.firstChild);
+  //       }    
+  //     });
   } else {
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);

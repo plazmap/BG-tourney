@@ -20,7 +20,10 @@ if (tab == 0 ){
         var level1selectors = document.querySelector(".level-1-selectors");
         if (currentchar.level ==0){
             level1error.style.display = "block";
-            level1selectors.style.display = "none";
+            //level1selectors.style.display = "none";
+
+
+            // TEMPORARY, REMOVE COMMENTARY WHEN TESTING IS DONE
         }else{
             level1error.style.display = "none";
             level1selectors.style.display = "block";

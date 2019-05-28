@@ -51,9 +51,40 @@
           <p>After certain millestones you grow more powerfull !</p>
           <p class="level-1-error error">You must first finish character creation ! </p>
           <div class="level-1-selectors">
-            <p class ="milestone"> After all 25 point games:</p>
-            <label>+1 FOCUS. You may chose an additionnal spell from the starting list, or a new capacity :<br /><br />
-              <select class="selector capacity-selector"> 
+            <p class ="milestone"> After 25 points games:</p>
+            <label>+1 FOCUS. And you may chose an additionnal spell from the starting list, or a new capacity :<br />
+              <select class="selector pts25-1selector"> 
+              </select>
+              <select class="selector pts25-2selector"> 
+              </select>
+            </label>
+            <p class ="milestone"> After the first 50 points game:</p>
+            <label>you may chose an additional stat point for MAT/RAT/DEF/ARM without exceding max :<br />
+              <select class="selector stat-selector stat-1selector"> 
+              </select>
+            </label>
+            <p class ="milestone"> After 50 points games:</p>
+            <label>+1 FOCUS. And you may chose an additionnal weapon from the extended list, and your FEAT !!! :<br />
+              <select class="selector pts50-1selector"> 
+              </select>
+              <select class="selector pts50-2selector"> 
+              </select>
+            </label>
+            <p class ="milestone"> After the first 75 points game:</p>
+            <label>you may chose an additional stat point for MAT/RAT/DEF/ARM without exceding max :<br />
+              <select class="selector stat-selector stat-2selector"> 
+              </select>
+            </label>
+            <p class ="milestone"> After 75 points games:</p>
+            <label>+1 FOCUS. And you may chose an additionnal spell from the list, or a new capacity :<br />
+              <select class="selector pts75-1selector"> 
+              </select>
+              <select class="selector pts75-2selector"> 
+              </select>
+            </label>
+            <p class ="milestone"> After the first 100 points game:</p>
+            <label>you may chose an additional stat point for MAT/RAT/DEF/ARM without exceding max :<br />
+              <select class="selector stat-selector stat-3selector"> 
               </select>
             </label>
           </div>
@@ -154,6 +185,7 @@
     <script src="js/functions.js"></script>
     <script src="js/caster.js"></script>
     <script src="js/tabs.js"></script>
+    <script src="js/selector_cleaner.js"></script>
     <script src="js/selector_initial.js"></script>
     <script src="js/selector_levelup.js"></script>
     <script src="js/descriptor.js"></script>

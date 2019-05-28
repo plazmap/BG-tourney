@@ -1,21 +1,6 @@
 
-//Delete all child nodes when needed.
-
-document.addEventListener("select:faction", function(){
-  deleteChildren(".archetype-selector");
-  deleteChildren(".spell-selector");
-  deleteChildren(".capacity-selector");
-});
-
-document.addEventListener("select:archetype", function() {  
-  deleteChildren(".spell-selector");
-  deleteChildren(".capacity-selector");
-});
-
-
 //Trigger customevent when caster name is registered.
 
-var nameSelector = document.querySelector("#name-selector");
 nameSelector.addEventListener("change", function(e){
   var name = this.value;
   var event = new CustomEvent ("select:name",{
@@ -28,8 +13,6 @@ nameSelector.addEventListener("change", function(e){
 });
 
 //Create faction Select's options.
-
-var factionSelector = document.querySelector(".faction-selector");
 
 var opt = document.createElement("option");
 opt.appendChild(document.createTextNode("Please select faction"));
@@ -61,7 +44,7 @@ factionSelector.addEventListener("change", function(e) {
 
 
 //Create archetype selector once faction is selected.
-var archetypeSelector = document.querySelector(".archetype-selector");
+
 
 document.addEventListener("select:faction", function(e) {
   
@@ -95,7 +78,7 @@ archetypeSelector.addEventListener("change", function(e) {
 
 //create initial capacity selector once archetype is selected.
 
-var capacitySelector = document.querySelector(".capacity-selector");
+
 
 document.addEventListener("select:archetype", function(e) {
 
@@ -133,7 +116,6 @@ capacitySelector.addEventListener("change", function(e) {
 
 //Create spell selectors once archetype is selected. 
 
-var spellSelectors = document.querySelectorAll(".spell-selector");
 spellSelectors.forEach(spellSelector => {
   document.addEventListener("select:archetype", function(e){
     
@@ -172,7 +154,6 @@ spellSelectors.forEach(spellSelector => {
 
 //Recreate spell selectors once a spell is selected. Minus THAT spell.
 
-var spellSelectors = document.querySelectorAll(".spell-selector");
 spellSelectors.forEach(spellSelector => {
   document.addEventListener("select:spell", function(e){
     var archetypekey = currentchar.archetype;

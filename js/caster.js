@@ -8,6 +8,12 @@ function caster() {
     this.spells = [];
     this.feat; 
     this.level;
+    this.firstdecision;
+    this.seconddecision;
+    this.thirddecision;
+    this.forthdecision;
+    this.fifthdecision;
+    this.sixthdecision;
   }
   
 //Initiate new caster.
@@ -51,8 +57,39 @@ document.addEventListener("select:spell", function(e) {
         }
     })
     casterLevel();
-    console.log(currentchar.level);
+
 });
+
+
+document.addEventListener("select:second25", function(e) {
+    currentchar.firstdecision = e.detail.decision;
+});
+
+document.addEventListener("select:firststat", function(e) {
+    currentchar.seconddecision = e.detail.decision;
+});
+
+document.addEventListener("select:first50", function(e) {
+    currentchar.thirddecision = e.detail.decision;
+});
+
+document.addEventListener("select:second50", function(e) {
+    currentchar.feat = e.detail.feat;
+});
+
+document.addEventListener("select:secondstat", function(e) {
+    currentchar.fourthdecision = e.detail.decision;
+});
+
+document.addEventListener("select:second50", function(e) {
+    currentchar.fifthdecision = e.detail.decision;
+});
+
+document.addEventListener("select:thirdstat", function(e) {
+    currentchar.sixthdecision = e.detail.decision;
+});
+
+
 
 function casterLevel(){
     if ((currentchar.name)&&(currentchar.faction)&&(currentchar.archetype)&&(currentchar.capacities)&&(currentchar.spells.length == 3)){
