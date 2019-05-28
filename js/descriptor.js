@@ -4,8 +4,6 @@
 
 function descriptorUpdate(){
 
-
-
     var namebox = document.querySelector(".caster-name");
     var factionbox = document.querySelector(".caster-faction");
     var archetypebox = document.querySelector(".caster-archetype");
@@ -16,10 +14,10 @@ function descriptorUpdate(){
     
     //Display name.
 
-    if (currentchar.name){
-        namebox.innerHTML=currentchar.name;
+    if (currentchar.card.name){
+        namebox.innerHTML=currentchar.card.name;
         
-    }else{ namebox.innerHTML="Unidentified Warcaster";
+    }else{namebox.innerHTML="Unidentified Warcaster";
     }
 
     //Display faction.
