@@ -32,13 +32,14 @@ function caster() {
         level:"",
     }
     this.cardUpdate = function(){
+        
         this.card.name = this.decisions.name;
         this.card.faction= this.decisions.faction;
         this.card.archetype = this.decisions.archetype;
 
         this.card.weapons = [];
         if (currentchar.decisions.archetype){
-            Object.keys(data.faction[this.decisions.faction].archetypes[this.decisions.archetype].weapons.initial).forEach(weaponkey => {
+            data.factions[this.decisions.faction].archetypes[this.decisions.archetype].weapons.initial.forEach(weaponkey => {
                 this.card.weapons.push(weaponkey);
             });
             if (this.decisions.pts50first){
@@ -49,7 +50,7 @@ function caster() {
         this.card.capacities = [];
         
         if (currentchar.decisions.archetype){
-            Object.keys(data.faction[this.decisions.faction].archetypes[this.decisions.archetype].capacities.initial).forEach(capacitykey => {
+            data.factions[this.decisions.faction].archetypes[this.decisions.archetype].capacities.initial.forEach(capacitykey => {
                 this.card.capacities.push(capacitykey);
             });
             if (this.decisions.firstcapacity){
@@ -74,7 +75,7 @@ function caster() {
         if (this.decisions.pts75first == "spell"){
             this.card.spells.push(this.decisions.pts75second);
         }
-
+        
         this.card.feat = this.decisions.pts50second;
         
         if ((currentchar.decisions.name)&&(currentchar.decisions.faction)&&(currentchar.decisions.archetype)&&(currentchar.decisions.firstcapacity)&&(currentchar.decisions.firstspells.length == 3)){
@@ -82,7 +83,6 @@ function caster() {
         }else {
             currentchar.card.level = 0;
         }
-        console.log(currentchar.card);
     }
   }
   

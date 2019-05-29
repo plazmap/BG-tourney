@@ -1,5 +1,5 @@
 var data ={
-    "faction": {
+    "factions": {
         "cryx": {
             "name": "Cryx Empire",
             "description": "The good guyz. If you disagree, you can't handle the thruth bruh.",

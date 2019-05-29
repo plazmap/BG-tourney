@@ -36,9 +36,9 @@ function createFactionSelector(){
 
     factionSelector.appendChild(opt);
 
-    Object.keys(data.faction).forEach(factionkey => {
+    Object.keys(data.factions).forEach(factionkey => {
         var opt = document.createElement("option");
-        opt.appendChild(document.createTextNode(data.faction[factionkey].name));
+        opt.appendChild(document.createTextNode(data.factions[factionkey].name));
         opt.value = factionkey;
         factionSelector.appendChild(opt);
     });
@@ -64,9 +64,9 @@ function createArchetypeSelector(){
     opt.setAttribute ("selected", "selected");
     archetypeSelector.appendChild(opt);
   
-    Object.keys(data.faction[factionkey].archetypes).forEach(archetypekey => {
+    Object.keys(data.factions[factionkey].archetypes).forEach(archetypekey => {
       var opt = document.createElement("option");
-      opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].name));
+      opt.appendChild(document.createTextNode(data.factions[factionkey].archetypes[archetypekey].name));
       opt.value = archetypekey;
       archetypeSelector.appendChild(opt);
     });
@@ -95,9 +95,10 @@ function createFirstCapacitySelector (){
   opt.setAttribute ("selected", "selected");
   capacitySelector.appendChild(opt);
 
-  Object.keys(data.faction[factionkey].archetypes[archetypekey].capacities.acquired).forEach(capacitykey => {   
+  data.factions[factionkey].archetypes[archetypekey].capacities.acquired.forEach(capacitykey => {  
+
     var opt = document.createElement("option");
-    opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].capacities.acquired[capacitykey].name));
+    opt.appendChild(document.createTextNode(data.capacities[capacitykey].name));
     opt.value = capacitykey;
     capacitySelector.appendChild(opt);
   });
@@ -124,10 +125,10 @@ function createSpellSelector (spellSelector){
     opt.setAttribute ("selected", "selected");
     spellSelector.appendChild(opt);
 
-    Object.keys(data.faction[factionkey].archetypes[archetypekey].spelllist.initial).forEach(spellkey => {
+    data.factions[factionkey].archetypes[archetypekey].spelllist.initial.forEach(spellkey => {
       var opt = document.createElement("option");
-      opt.appendChild(document.createTextNode(data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey]));
-      opt.value = data.faction[factionkey].archetypes[archetypekey].spelllist.initial[spellkey];
+      opt.appendChild(document.createTextNode(data.spells[spellkey].name));
+      opt.value = spellkey;
       spellSelector.appendChild(opt);
     });  
  
@@ -145,7 +146,6 @@ function createSpellSelector (spellSelector){
 function updateSpellSelector(spellSelector){
     var archetypekey = currentchar.decisions.archetype;
     var factionkey = currentchar.decisions.faction;
-    var spells = data.faction[factionkey].archetypes[archetypekey].spelllist.initial;
     var spellselected = spellSelector.value;
     while (spellSelector.firstChild){
       spellSelector.removeChild(spellSelector.firstChild);
@@ -158,12 +158,12 @@ function updateSpellSelector(spellSelector){
       opt.setAttribute ("selected", "selected");
       spellSelector.appendChild(opt);
     }
-    Object.keys(spells).forEach(spellkey => {
-      if (!(currentchar.decisions.firstspells.includes(spells[spellkey]))||(spellselected == spells[spellkey])) {
+    data.factions[factionkey].archetypes[archetypekey].spelllist.initial.forEach(spellkey => {
+      if (!(currentchar.decisions.firstspells.includes(spellkey))||(spellselected == spellkey)) {
         var opt = document.createElement("option");
-        opt.appendChild(document.createTextNode(spells[spellkey]));
-        opt.value = spells[spellkey];
-        if (spellselected == spells[spellkey]){
+        opt.appendChild(document.createTextNode(data.spells[spellkey].name));
+        opt.value = spellkey;
+        if (spellselected == spellkey){
           opt.setAttribute("selected", "selected");   
         } 
         spellSelector.appendChild(opt);
@@ -206,7 +206,6 @@ function createSecond25Selector(){
     var factionkey = currentchar.decisions.faction;
     
     if (currentchar.decisions.pts25first == "spell"){
-        var spells = data.faction[factionkey].archetypes[archetypekey].spelllist.initial;
         var opt = document.createElement("option");
         opt.appendChild(document.createTextNode("Please select a spell"));
         opt.setAttribute ("hidden", "hidden");
@@ -214,16 +213,16 @@ function createSecond25Selector(){
         opt.setAttribute ("selected", "selected");
         second25Selector.appendChild(opt);
 
-        Object.keys(spells).forEach(spellkey => {
-            if (!(currentchar.decisions.firstspells.includes(spells[spellkey]))){
+        data.factions[factionkey].archetypes[archetypekey].spelllist.initial.forEach(spellkey => {
+            if (!(currentchar.decisions.firstspells.includes(spellkey))){
                 var opt = document.createElement("option");
-                opt.appendChild(document.createTextNode(spells[spellkey]));
-                opt.value = spells[spellkey];
+                opt.appendChild(document.createTextNode(data.spells[spellkey].name));
+                opt.value = spellkey;
                 second25Selector.appendChild(opt);
             }
         });
     }else if (currentchar.decisions.pts25first == "capacity"){
-        var capacities = data.faction[factionkey].archetypes[archetypekey].capacities.acquired;
+        
         var opt = document.createElement("option");
         opt.appendChild(document.createTextNode("Please select a capacity"));
         opt.setAttribute ("hidden", "hidden");
@@ -231,10 +230,10 @@ function createSecond25Selector(){
         opt.setAttribute ("selected", "selected");
         second25Selector.appendChild(opt);
 
-        Object.keys(capacities).forEach(capacitykey => {
+        data.factions[factionkey].archetypes[archetypekey].capacities.acquired.forEach(capacitykey => {
             if (!(currentchar.decisions.firstcapacity == capacitykey)){
                 var opt = document.createElement("option");
-                opt.appendChild(document.createTextNode(capacities[capacitykey].name));
+                opt.appendChild(document.createTextNode(data.capacities[capacitykey].name));
                 opt.value = capacitykey;
                 second25Selector.appendChild(opt);
             }
@@ -258,30 +257,28 @@ function create50Selectors(){
     var archetypekey = currentchar.decisions.archetype;
     var factionkey = currentchar.decisions.faction;
 
-    var weapons = data.faction[factionkey].archetypes[archetypekey].weapons.acquired;
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select additionnal spell"));
     opt.setAttribute ("hidden", "hidden");
     opt.setAttribute ("disabled", "disabled");
     opt.setAttribute ("selected", "selected");
     first50Selector.appendChild(opt);
-    Object.keys(weapons).forEach(weaponkey => {
+    data.factions[factionkey].archetypes[archetypekey].weapons.acquired.forEach(weaponkey => {
         var opt = document.createElement("option");
-        opt.appendChild(document.createTextNode(weapons[weaponkey].name));
+        opt.appendChild(document.createTextNode(data.weapons[weaponkey].name));
         opt.value = weaponkey;
         first50Selector.appendChild(opt);
     });
 
-    var feats = data.faction[factionkey].archetypes[archetypekey].feats; 
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode("Please select your Feat ! "));
     opt.setAttribute ("hidden", "hidden");
     opt.setAttribute ("disabled", "disabled");
     opt.setAttribute ("selected", "selected");
     second50Selector.appendChild(opt);
-    Object.keys(feats).forEach(featkey => {
+    data.factions[factionkey].archetypes[archetypekey].feats.forEach(featkey => {
         var opt = document.createElement("option");
-        opt.appendChild(document.createTextNode(feats[featkey].name));
+        opt.appendChild(document.createTextNode(data.feats[featkey].name));
         opt.value = featkey;
         second50Selector.appendChild(opt);
     });
@@ -343,8 +340,7 @@ function createSecond75Selector(){
     var factionkey = currentchar.decisions.faction;
     
     if (currentchar.decisions.pts75first == "spell"){
-        var spells = data.faction[factionkey].archetypes[archetypekey].spelllist.initial;
-        var spellsextended = data.faction[factionkey].archetypes[archetypekey].spelllist.extended;
+        
         var opt = document.createElement("option");
         opt.appendChild(document.createTextNode("Please select a spell"));
         opt.setAttribute ("hidden", "hidden");
@@ -352,24 +348,24 @@ function createSecond75Selector(){
         opt.setAttribute ("selected", "selected");
         second75Selector.appendChild(opt);
 
-        Object.keys(spells).forEach(spellkey => {
-            if ((!(currentchar.decisions.firstspells.includes(spells[spellkey])))&&(currentchar.decisions.pts25second!=spells[spellkey])){
+        data.factions[factionkey].archetypes[archetypekey].spelllist.initial.forEach(spellkey => {
+            if ((!(currentchar.decisions.firstspells.includes(spellkey)))&&(currentchar.decisions.pts25second!=spellkey)){
                 var opt = document.createElement("option");
-                opt.appendChild(document.createTextNode(spells[spellkey]));
-                opt.value = spells[spellkey];
+                opt.appendChild(document.createTextNode(data.spells[spellkey].name));
+                opt.value = spellkey;
                 second75Selector.appendChild(opt);
             }
         });
-        Object.keys(spellsextended).forEach(spellkey => {
+        data.factions[factionkey].archetypes[archetypekey].spelllist.extended.forEach(spellkey => {
+            console.log(spellkey);
             var opt = document.createElement("option");
-                opt.appendChild(document.createTextNode(spellsextended[spellkey]));
-                opt.value = spellsextended[spellkey];
-                second75Selector.appendChild(opt);
+            opt.appendChild(document.createTextNode(data.spells[spellkey].name));
+            opt.value = spellkey;
+            second75Selector.appendChild(opt);
         });
 
 
     }else if (currentchar.decisions.pts75first == "capacity"){
-        var capacities = data.faction[factionkey].archetypes[archetypekey].capacities.acquired;
         var opt = document.createElement("option");
         opt.appendChild(document.createTextNode("Please select a capacity"));
         opt.setAttribute ("hidden", "hidden");
@@ -377,10 +373,10 @@ function createSecond75Selector(){
         opt.setAttribute ("selected", "selected");
         second75Selector.appendChild(opt);
 
-        Object.keys(capacities).forEach(capacitykey => {
-            if ((!(currentchar.decisions.firstcapacity == capacitykey))&&(currentchar.decisions.pts25second!=capacities[capacitykey])){
+        data.factions[factionkey].archetypes[archetypekey].capacities.acquired.forEach(capacitykey => {
+            if ((currentchar.decisions.firstcapacity != capacitykey)&&(currentchar.decisions.pts25second!=capacitykey)){
                 var opt = document.createElement("option");
-                opt.appendChild(document.createTextNode(capacities[capacitykey].name));
+                opt.appendChild(document.createTextNode(data.capacities[capacitykey].name));
                 opt.value = capacitykey;
                 second75Selector.appendChild(opt);
             }
