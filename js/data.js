@@ -11,7 +11,7 @@ var data ={
                         "initial":["admonition", "bleed", "carnage", "ghost walk", "grave wind", "infernal machine", "occultation", "scything touch"],
                         "extended":["dash","deceleration","death ward", "hex blast", "telekenis"]
                     }, 
-                    "hp":"8",
+                    "hp":"8", 
                     "stats": {
                         "SPD":"6",
                         "STR":"5",
@@ -127,7 +127,7 @@ var data ={
                     "description":"Sure they can fight. For a couple decades, then it's all ''booohooo I'm old and slow''. Pathetic.",
                     "spelllist":{
                         "initial":["arcane bolt", "arcane shield", "blur", "deadeye", "mage sight", "positive charge", "rebuke", "snipe"],
-                        "extended":["deceleration, full throttle", "guided fire", "onslaught", "thunder-strike"]
+                        "extended":["deceleration, full throttle", "guided fire", "onslaught", "thunder strike"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -181,7 +181,7 @@ var data ={
             }
         }
     },
-    "spells": {
+    "spells":{
         "admonition":{
             "name":"Admonition",
             "COST":"2",
@@ -261,6 +261,376 @@ var data ={
             "UP":"oui",
             "OFF":"non",
             "description":"La figurine alliée de la Faction gagne Dark Shroud (dans sa zone de mêlée, les figurines ennemies subissent -2 ARM)."
+        },
+        "dash":{
+            "name":"Dash",
+            "COST":"2",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":" Le lanceur et les guerriers alliés qui s'activent dans la Zone de Contrôle gagnent +1 SPD. Tant qu'ils se trouvent dans la Zone de Contrôle, les guerriers alliés gagnent Parry. Dure un turn."
+        },
+        "deceleration":{
+            "name":"Deceleration",
+            "COST":"3",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Tant qu'ils sont dans la Zone de Contrôle, les figurines alliées gagnent +2 ARM contre les attaques à distance jusqu'à la fin du round."
+        },
+        "death ward":{
+            "name":"Death Ward",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine/unité alliée ciblée de la Faction gagne +2 ARM. Si un warjack affecté est endommagé, vous choisissez la colonne qui subit les dommages."
+        },
+        "hex blast":{
+            "name":"Hex Blast",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"3",
+            "POW":"13",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Les animi et sorts à entretien ennemis sur la figurine/unité directement touchée expirent immédiatement."
+        },
+        "telekenesis":{
+            "name":"Telekenesis",
+            "COST":"2",
+            "RNG":"8",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Placez la figurine ciblée complètement dans les 2'' de sa position initiale. Une figurine ne peut être affectée par Telekinesis qu'une fois par tour."
+        },
+        "blood rain":{
+            "name":"Blood Rain",
+            "COST":"3",
+            "RNG":"8",
+            "AOE":"3",
+            "POW":"12",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Dommage de Corrosion. Les figurines touchées subissent l'effet Corrosion."
+        },
+        "curse of shadows":{
+            "name":"Curse Of Shadows",
+            "COST":"3",
+            "RNG":"8",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"oui",
+            "description":"La figurine/unité ciblée subit -2 ARM et ne peut pas faire de free strikes. Une figurine peut traverser une figurine affectée sans chevaucher son socle."
+        },
+        "hellfire":{
+            "name":"Hellfire",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"",
+            "POW":"14",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Les figurines mises hors de combat par ce sort ne peuvent pas faire de jet de Tough. Les figurines boxées sont retirées du jeu."
+        },
+        "parasite":{
+            "name":"Parasite",
+            "COST":"2",
+            "RNG":"8",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"oui",
+            "description":"La figurine/unité ciblée subit -3 ARM et le lanceur gagne +1 ARM."
+        },
+        "stranglehold":{
+            "name":"Stranglehold",
+            "COST":"2",
+            "RNG":"10",
+            "AOE":"",
+            "POW":"11",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Une figurine endommagée par ce sort doit sacrifier soit son action soit son mouvement à sa prochaine activation, au choix du contrôleur."
+        },
+        "excarnate":{
+            "name":"Excarnate",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"",
+            "POW":"13",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Quand un guerrer vivant ennemi est boxé par Excarnate, retirez le du jeu. Vous pouvez ajouter un Grunt à une unité de undeads à petit socles dans la Zone de Contrôle du lanceur. Le Grunt doit être placé en formation et complètement à l'inérieur de 3'' depuis le lanceur. Il devra sacrifier son Action de Combat ce turn."
+        },
+        "mortality":{
+            "name":"Mortality",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"La figurine/unité ciblée subit -2 DEF et -2 ARM, perd Tough et ne peut pas se faire retirer des dommages. Ce sort dure un round."
+        },
+        "soul gate":{
+            "name":"Soul Gate",
+            "COST":"3",
+            "RNG":"CTRL",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Retirez du jeu un troupier allié dans la Zone de Contrôle du lanceur et remplacez le par un warjack du battlegroup du lanceur situé dans la Zone de Controle. Le warjack ne pourra pas s'activer ce turn après Soul Gate."
+        },
+        "crippling grasp":{
+            "name":"Crippling Grasp",
+            "COST":"3",
+            "RNG":"8",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"oui",
+            "description":"La figurine/unité ciblée subit -2 SPD, -2 STR, -2 DEF et -2 ARM."
+        },
+        "vanish":{
+            "name":"Vanish",
+            "COST":"ERR",
+            "RNG":"ERR",
+            "AOE":"ERR",
+            "POW":"ERR",
+            "UP":"ERR",
+            "OFF":"ERR",
+            "description":"ERROR"
+        },
+        "venom":{
+            "name":"Venom",
+            "COST":"2",
+            "RNG":"SP8",
+            "AOE":"",
+            "POW":"10",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Venom cause des dommage de Corrosion. Les figurines touchées subissent l'effet continu Corrosion."
+        },
+        "dark guidance":{
+            "name":"Dark Guidance",
+            "COST":"4",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Tant qu'elles sont dans la Zone de Contrôle, les figurines alliées de la Faction gagnent un dé additionnel sur leurs jets d'attaque pendant ce turn."
+        },
+        "arcane blast":{
+            "name":"Arcane Blast",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"4",
+            "POW":"13",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Zap !"
+        },
+        "arcane bolt":{
+            "name":"Arcane Bolt",
+            "COST":"2",
+            "RNG":"12",
+            "AOE":"",
+            "POW":"11",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Zap !"
+        },
+        "arcane shield":{
+            "name":"Arcane Shield",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine/unité alliée ciblée gagne +3 ARM, sauf celles hors-formation."
+        },
+        "blur":{
+            "name":"Blur",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine/unité alliée ciblée gagne +3 DEF contre les attaques à distance et les attaques de magie, sauf les figurines hors-formation."
+        },
+        "chain lightning":{
+            "name":"Chain Lightning",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"",
+            "POW":"10",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Une figurine touchée subit un jet de dommages électriques POW 10, et d3 éclairs font des arcs depuis cette figurine. Chaque arc fait jusqu'à 4'' vers la plus proche figurine de la dernière figurine touchée. Chaque figurine atteinte par un éclair subit un jet de dommage électrique POW 10."
+        },
+        "lightning shroud":{
+            "name":"Lightning Shroud",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Le warjack ciblé du battlegroup gagne +2 STR, Immunity Electricity et ses armes de mêlée gagnent Electro-Leap."
+        },
+        "mage sight":{
+            "name":"Mage Sight",
+            "COST":"2",
+            "RNG":"CTRL",
+            "AOE":"5",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Placez une AOE 5'' complètement dans la Zone de Contrôle. Les figurines du battlegroup du lanceur ignore les forêts et les nuées pour tracer des lignes de vue vers les figurines situées dans l'AOE et ignorent leur Stealth."
+        },
+        "polarity shield":{
+            "name":"Polarity Shield",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"La figurine/unité ciblée ne peut pas être ciblée par des charges ou des slams de figurines situées dans son arc avant."
+        },
+        "full throttle":{
+            "name":"Full Throttle",
+            "COST":"3",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Les wajacks du battlegroup s'activant dans la Zone de Contrôle peuvent courir, charger, slammer ou piétiner sans dépenser de focus. Tant qu'ils sont dans la Zone de Contrôle, leurs attaques de mêlée sont boostées jusqu'à la fin du tour."
+        },
+        "teleport":{
+            "name":"Teleport",
+            "COST":"2",
+            "RNG":"SELF",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Placez le lanceur complètement à l'intérieur de 6'' de sa position initiale. Ensuite son activation s'arrête."
+        },
+        "thunder strike":{
+            "name":"Thunder-Strike",
+            "COST":"4",
+            "RNG":"8",
+            "AOE":"",
+            "POW":"14",
+            "UP":"non",
+            "OFF":"oui",
+            "description":"Une figurine non-incorporelle touchée est slammée de d6'' et subit un jet de dommage POW 14. Les dommages collatéraux ont une POW de 14."
+        },
+        "deadeye":{
+            "name":"Deadeye",
+            "COST":"2",
+            "RNG":"5",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"La figurine/unité alliée ciblée gagne un dé additionnel sur le premier jet d'attaque à distance non-spray de ce turn de chaque figurine affectée."
+        },
+        "positive charge":{
+            "name":"Positive Charge",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Le warjack allié de la Faction gagne +2 à ses jets d'attaque et de dommage de mêlée. Tant qu'elles sont dans les 3'' de ce warjack, les figurines alliées de la Faction gagnent le même bonus. Dure un turn."
+        },
+        "rebuke":{
+            "name":"Rebuke",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Placez une AOE 5'' complètement dans la Zone de Contrôle. Les figurines du battlegroup du lanceur ignore les forêts et les nuées pour tracer des lignes de vue vers les figurines situées dans l'AOE et ignorent leur Stealth."
+        },
+        "snipe":{
+            "name":"Snipe",
+            "COST":"2",
+            "RNG":"6",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Les armes à distance de la figurine/unité alliée ciblée gagne +4 RNG."
+        },
+        "guided fire":{
+            "name":"Guided Fire",
+            "COST":"3",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Tant qu'ils sont dans la Zone de Contrôle, les figurines du battlegroup gagnent des attaques à distance boostées jusqu'à la fin du tour."
+        },
+        "onslaught":{
+            "name":"Onslaught",
+            "COST":"2",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"non",
+            "description":"Le lanceur et les figurines alliées de la Faction commençant leur activation dans la Zone de Contrôle gagnent Relentless Charge."
+        },
+        "calamity":{
+            "name":"Calamity",
+            "COST":"3",
+            "RNG":"10",
+            "AOE":"",
+            "POW":"",
+            "UP":"oui",
+            "OFF":"oui",
+            "description":"La figurine/unité ciblée subit -2 DEF et ARM."
+        },
+        "energizer":{
+            "name":"Energizer",
+            "COST":"2",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Les figurines du battlegroup du lanceur avance immédiatement de 2''.Energizer peut être lancé une seule fois par tour."
+        },
+        "fire group":{
+            "name":"Fire group",
+            "COST":"2",
+            "RNG":"SELF",
+            "AOE":"CTRL",
+            "POW":"",
+            "UP":"non",
+            "OFF":"non",
+            "description":"Tant que les figurines du battlegroup restent dans la Zone de Contrôle, leurs armes à distance gagnent +2 RNG. Dure un turn."
         },
         "plop":{
             "name":"",
