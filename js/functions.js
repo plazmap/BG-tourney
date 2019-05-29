@@ -145,3 +145,21 @@ function createSpell (spellkey){
   return (spellbox);
 
 }
+
+function createFeat (featkey){
+  var name = document.createElement("p");
+  var description = document.createElement("p");
+  name.classList.add("sub-name");
+  description.classList.add("sub-description");
+  name.innerHTML = data.feats[featkey].name;
+  description.innerHTML = data.feats[featkey].description;
+
+  var featbox = document.createElement("div");
+  featbox.classList.add("sub-wrapper");
+  featbox.appendChild(name);
+  featbox.appendChild(description);
+  
+  return(featbox);
+
+}
+

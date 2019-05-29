@@ -96,7 +96,6 @@ function createFirstCapacitySelector (){
   capacitySelector.appendChild(opt);
 
   data.factions[factionkey].archetypes[archetypekey].capacities.acquired.forEach(capacitykey => {  
-
     var opt = document.createElement("option");
     opt.appendChild(document.createTextNode(data.capacities[capacitykey].name));
     opt.value = capacitykey;
@@ -357,7 +356,6 @@ function createSecond75Selector(){
             }
         });
         data.factions[factionkey].archetypes[archetypekey].spelllist.extended.forEach(spellkey => {
-            console.log(spellkey);
             var opt = document.createElement("option");
             opt.appendChild(document.createTextNode(data.spells[spellkey].name));
             opt.value = spellkey;

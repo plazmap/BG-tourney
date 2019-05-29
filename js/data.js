@@ -9,7 +9,7 @@ var data ={
                     "description": "Bad ass pirate goes \"yaaaar\". Black powder and rhum included.",
                     "spelllist":{
                         "initial":["admonition", "bleed", "carnage", "ghost walk", "grave wind", "infernal machine", "occultation", "scything touch"],
-                        "extended":["dash","deceleration","death ward", "hex blast", "telekenis"]
+                        "extended":["dash","deceleration","death ward", "hex blast", "telekenesis"]
                     }, 
                     "hp":"8", 
                     "stats": {
@@ -65,7 +65,7 @@ var data ={
                     "description":"Likes your soul. Yummy.",
                     "spelllist":{
                         "initial":["crippling grasp", "ghost walk", "hellfire", "infernal machine", "occultation", "scything touch", "vanish", "venom"],
-                        "extended":["dark guidance, death ward, hex blast, soul gate, telekenesis"]
+                        "extended":["dark guidance", "death ward", "hex blast", "soul gate", "telekenesis"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -119,7 +119,7 @@ var data ={
                     },
                     "capacities":{
                         "initial":[],
-                        "acquired":["arcane vortex","field marshall immunity electricity ionization","leadership immunity electricity electro leap ","overpower","superconduction"]                           
+                        "acquired":["arcane vortex","field marshall immunity electricity ionization","leadership immunity electricity electro leap","overpower","superconduction"]                           
                     }
                 },
                 "combattant": {
@@ -127,7 +127,7 @@ var data ={
                     "description":"Sure they can fight. For a couple decades, then it's all ''booohooo I'm old and slow''. Pathetic.",
                     "spelllist":{
                         "initial":["arcane bolt", "arcane shield", "blur", "deadeye", "mage sight", "positive charge", "rebuke", "snipe"],
-                        "extended":["deceleration, full throttle", "guided fire", "onslaught", "thunder strike"]
+                        "extended":["deceleration", "full throttle", "guided fire", "onslaught", "thunder strike"]
                     }, 
                     "hp":"8",
                     "stats": {
@@ -147,7 +147,7 @@ var data ={
                     },
                     "capacities":{
                         "initial":[],
-                        "acquired":["dig in","field marshall swift hunter","leadership brutal charge","tactitian faction warriors","veteran leader faction warrior"]                           
+                        "acquired":["dig in","field marshall swift hunter","leadership brutal charge","tactician faction warriors","veteran leader faction warrior"]                           
                     }
                 },
                 "gun mage": {
@@ -958,7 +958,7 @@ var data ={
             "name":"Field Marshall : Immunity Electricity + Ionization",
             "description":"Les figurines du battlegroup de l'Arcaniste gagnent Immunity Electricity et Ionization (Quand une figurine subit un jet de dommages électriques à moins de 5'' d'une figurine avec Ionization, ajouter +2 au jet."
         },
-        "leadership immunity electricity electro leap ":{
+        "leadership immunity electricity electro leap":{
             "name":"Leadership : Immunity Electricity + Electro-leap ",
             "description":"L'Arcaniste gagne Immunity Electricity et ses armes de mêlée gagnent Electro-leap. Tant qu'ils se trouvent dans la portée de commandement de l'Arcaniste, les guerriers alliés de la Faction gagnent eux aussi Immunity Electricity et leurs armes de mêlée gagnent Electro-leap."
         },
@@ -982,7 +982,7 @@ var data ={
             "name":"Leadership : Brutal Charge",
             "description":"Le Combattant gagne Brutal Charge avec ses armes de mêlée : il gagne +2 aux jets de dommages des attaques de charge avec une de ses armes de mêlée. Tant qu'ils se trouvent dans la portée de commandement du Combattant, les guerriers alliés de la Faction gagnent eux aussi Brutal Charge."
         },
-        "tactician faction warrior":{
+        "tactician faction warriors":{
             "name":"Tactitian [Faction Warriors]",
             "description":"Tant qu'ils se trouvent dans la portée de commandement du Combattant, les guerriers alliés de la Faction peuvent ignorer les autres guerriers alliés de la Faction pour déterminer les lignes de vue. Ils peuvent traverser les autres guerriers alliés de la Faction s'ils peuvent les dépasser totalement."
         },

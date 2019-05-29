@@ -32,7 +32,7 @@ function descriptorUpdate(){
     if(currentchar.card.archetype){
         archetypebox.innerHTML = data.factions[currentchar.card.faction].archetypes[currentchar.card.archetype].name;
     }else{ 
-        factionbox.innerHTML = "Unkown Archetype";
+        archetypebox.innerHTML = "Unkown Archetype";
     }
         var spd = document.querySelector("#SPD");
         var str = document.querySelector("#STR");
@@ -53,7 +53,8 @@ function descriptorUpdate(){
         
         //Display capacities
 
-        deleteChildren("#caster-capacities");
+    deleteChildren(capacitiesbox);
+    if (currentchar.card.capacities){
         var subtitle = document.createElement("p");
         subtitle.classList.add("sub-title");
         subtitle.innerHTML = "Capacities";
@@ -62,10 +63,12 @@ function descriptorUpdate(){
         currentchar.card.capacities.forEach(capacitykey => {
             capacitiesbox.appendChild(createCapacity(capacitykey));
         });
-    
-        //Display weapons
+    }
+        
+    //Display weapons
 
-        deleteChildren("#caster-weapons");
+    deleteChildren(weaponsbox);
+    if (currentchar.card.weapons){
         var subtitle = document.createElement("p");
         subtitle.classList.add("sub-title");
         subtitle.innerHTML = "Weapons";
@@ -74,10 +77,12 @@ function descriptorUpdate(){
         currentchar.card.weapons.forEach(weaponkey => {
             weaponsbox.appendChild(createWeapon(weaponkey));
         });
+    }
+    
+    //Display spells
 
-        //Display spells
-  
-        deleteChildren("#caster-spells");
+    deleteChildren(spellsbox);
+    if (currentchar.card.spells){
         var subtitle = document.createElement("p");
         subtitle.classList.add("sub-title");
         subtitle.innerHTML = "Spells";
@@ -87,3 +92,16 @@ function descriptorUpdate(){
             spellsbox.appendChild(createSpell(spellkey));
         });
     }
+    
+
+    //Display feat. 
+    deleteChildren(featbox);
+    if (currentchar.card.feat){
+        var subtitle = document.createElement("p");
+        subtitle.classList.add("sub-title");
+        subtitle.innerHTML = "Feat";
+        spellsbox.appendChild(subtitle);
+        
+        featbox.appendChild(createFeat(currentchar.card.feat));
+    }
+}
