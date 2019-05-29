@@ -22,16 +22,15 @@ function deleteChildren(selector){
   }
 }
 
-function createWeapon(type, weaponkey){
+function createWeapon(weaponkey){
   //Type is "acquired" or "initial".
 
-  var weapons = data.faction[currentchar.faction].archetypes[currentchar.archetype].weapons[type];
   var weaponbox = document.createElement("div");
   weaponbox.classList.add("sub-wrapper");
   
   //display weapon name.
   var name = document.createElement("p");
-  name.innerHTML = weapons[weaponkey].name;
+  name.innerHTML = data.weapons[weaponkey].name;
   name.classList.add("sub-name");
   
   weaponbox.appendChild(name);
@@ -41,7 +40,7 @@ function createWeapon(type, weaponkey){
   weaponstatsbox = document.createElement("div");
   weaponstatsbox.classList.add("wrapper4");
 
-  Object.keys(weapons[weaponkey]).forEach(weapondetail => {
+  Object.keys(data.weapons[weaponkey]).forEach(weapondetail => {
    
     if (!((weapondetail == "name")||(weapondetail == "description"))){
       
@@ -54,9 +53,9 @@ function createWeapon(type, weaponkey){
       var value = document.createElement("p");
       value.classList.add("stat");
       if (weapondetail == "PS"){
-        value.innerHTML = parseInt(weapons[weaponkey].POW) + parseInt(data.faction[currentchar.faction].archetypes[currentchar.archetype].stats.STR);;
+        value.innerHTML = parseInt(data.weapons[weaponkey].POW) + parseInt(currentchar.card.stats.STR);;
       } else{
-        value.innerHTML = weapons[weaponkey][weapondetail];
+        value.innerHTML = data.weapons[weaponkey][weapondetail];
       }
       wrapper.appendChild(value);
 
@@ -68,9 +67,9 @@ function createWeapon(type, weaponkey){
   weaponbox.appendChild(weaponstatsbox);
   
   //If needed, display weapon description.
-  if(weapons[weaponkey].description != "none"){
+  if(data.weapons[weaponkey].description != "none"){
     var description = document.createElement("p");
-    description.innerHTML = weapons[weaponkey].description;
+    description.innerHTML = data.weapons[weaponkey].description;
     description.classList.add("sub-description");
     weaponbox.appendChild(description);
   }
@@ -78,16 +77,14 @@ function createWeapon(type, weaponkey){
 }
 
 
-function createCapacity (type, capacitykey){
-  //Type is "acquired" or "initial".
+function createCapacity (capacitykey){
 
-  var capacities = data.faction[currentchar.faction].archetypes[currentchar.archetype].capacities[type];
   var name = document.createElement("p");
   var description = document.createElement("p");
   name.classList.add("sub-name");
   description.classList.add("sub-description");
-  name.innerHTML = capacities[capacitykey].name;
-  description.innerHTML = capacities[capacitykey].description;
+  name.innerHTML = data.capacities[capacitykey].name;
+  description.innerHTML = data.capacities[capacitykey].description;
 
   var capacitybox = document.createElement("div");
   capacitybox.classList.add("sub-wrapper");

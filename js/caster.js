@@ -30,9 +30,19 @@ function caster() {
         HP:"",
         socle:"",
         level:"",
+        stats:{
+            "SPD":"",
+            "STR":"",
+            "MAT":"",
+            "RAT":"",
+            "DEF":"",
+            "ARM":"",
+            "CMD":"",
+            "FOC":""
+        }
     }
     this.cardUpdate = function(){
-        
+       
         this.card.name = this.decisions.name;
         this.card.faction= this.decisions.faction;
         this.card.archetype = this.decisions.archetype;
@@ -56,10 +66,10 @@ function caster() {
             if (this.decisions.firstcapacity){
                 this.card.capacities.push(this.decisions.firstcapacity);
             }
-            if (this.decisions.pts25first == "capacity"){
+            if ((this.decisions.pts25first == "capacity")&&(this.decisions.pts25second)){
                 this.card.capacities.push(this.decisions.pts25second);
             }
-            if (this.decisions.pts75first == "capacity"){
+            if ((this.decisions.pts75first == "capacity")&&(this.decisions.pts75second)){
                 this.card.capacities.push(this.decisions.pts75second);
             }
         }
@@ -69,10 +79,10 @@ function caster() {
             this.card.spells.push(spellkey);
         });
         
-        if (this.decisions.pts25first == "spell"){
+        if ((this.decisions.pts25first == "spell")&&(this.decisions.pts25second)){
             this.card.spells.push(this.decisions.pts25second);
         }
-        if (this.decisions.pts75first == "spell"){
+        if ((this.decisions.pts75first == "spell")&&(this.decisions.pts75second)){
             this.card.spells.push(this.decisions.pts75second);
         }
         
@@ -82,6 +92,61 @@ function caster() {
             currentchar.card.level = 1;
         }else {
             currentchar.card.level = 0;
+        }
+        if (this.decisions.archetype){
+            this.card.stats.SPD = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.SPD);
+            this.card.stats.STR = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.STR);
+            this.card.stats.MAT = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.MAT);
+            if (currentchar.decisions.firststat == "MAT"){
+                this.card.stats.MAT += 1;
+            }
+            if (currentchar.decisions.secondstat == "MAT"){
+                this.card.stats.MAT += 1;
+            }
+            if (currentchar.decisions.thirdstat == "MAT"){
+                this.card.stats.MAT += 1;
+            }
+            this.card.stats.RAT = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.RAT);
+            if (currentchar.decisions.firststat == "RAT"){
+                this.card.stats.RAT += 1;
+            }
+            if (currentchar.decisions.secondstat == "RAT"){
+                this.card.stats.RAT += 1;
+            }
+            if (currentchar.decisions.thirdstat == "RAT"){
+                this.card.stats.RAT += 1;
+            }
+            this.card.stats.DEF = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.DEF);
+            if (currentchar.decisions.firststat == "DEF"){
+                this.card.stats.DEF += 1;
+            }
+            if (currentchar.decisions.secondstat == "DEF"){
+                this.card.stats.DEF += 1;
+            }
+            if (currentchar.decisions.thirdstat == "DEF"){
+                this.card.stats.DEF += 1;
+            }
+            this.card.stats.ARM = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.ARM);
+            if (currentchar.decisions.firststat == "ARM"){
+                this.card.stats.ARM += 1;
+            }
+            if (currentchar.decisions.secondstat == "ARM"){
+                this.card.stats.ARM += 1;
+            }
+            if (currentchar.decisions.thirdstat == "ARM"){
+                this.card.stats.ARM += 1;
+            }
+            this.card.stats.CMD = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.CMD);
+            this.card.stats.FOC = parseInt(data.factions[this.decisions.faction].archetypes[this.decisions.archetype].stats.FOC);
+            if (currentchar.decisions.pts25second){
+                this.card.stats.FOC += 1;
+            }
+            if (currentchar.decisions.pts50second){
+                this.card.stats.FOC += 1;
+            }
+            if (currentchar.decisions.pts75second){
+                this.card.stats.FOC += 1;
+            }
         }
     }
   }
