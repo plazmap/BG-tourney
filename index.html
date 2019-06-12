@@ -67,13 +67,13 @@
             </div>
           </div>
           <br/>
-          <div class="form-group" style="width : 45%">
+          <div class="form-group" >
             <label for="capasel">Chose your initial capacity :</label>
-            <select class="form-control selector capacity-selector" id="capasel"></select>
+            <select class="form-control selector capacity-selector" id="capasel" style="width : 45%"></select>
           </div>
           <br/>
           <div class="form-group">
-            <label for="spellsel1 spellsel2 spellsel3">Chose your starting spells :</label>
+            <label for="spellsel1">Chose your starting spells :</label>
             <div class ="d-flex justify-content-between">
               <select class="form-control selector spell-selector" style="width : 45%" id="spellsel1"></select>
               <select class="form-control selector spell-selector" style="width : 45%" id="spellsel2"></select>
@@ -84,50 +84,59 @@
         </div>
         <div class="level-1">
           <br/>
-          <p>After certain millestones you grow more powerfull !</p>
+          <!-- <p>After certain millestones you grow more powerfull !</p> -->
           <p class="level-1-error error">You must first finish character creation ! </p>
           <div class="level-1-selectors">
-            <p class ="milestone"> After 25 points games:</p>
-            <label>+1 FOCUS. And you may chose an additionnal spell from the starting list, or a new capacity :<br />
-              <select class="selector pts25-1selector"> 
-              </select>
-              <select class="selector pts25-2selector"> 
-              </select>
-            </label>
-            <p class ="milestone"> After the first 50 points game:</p>
-            <label>you may chose an additional stat point for MAT/RAT/DEF/ARM without exceding max :<br />
-              <select class="selector stat-selector stat-1selector"> 
-              </select>
-            </label>
-            <p class ="milestone"> After 50 points games:</p>
-            <label>+1 FOCUS. And you may chose an additionnal weapon from the extended list, and your FEAT !!! :<br />
-              <select class="selector pts50-1selector"> 
-              </select>
-              <select class="selector pts50-2selector"> 
-              </select>
-            </label>
-            <p class ="milestone"> After the first 75 points game:</p>
-            <label>you may chose an additional stat point for MAT/RAT/DEF/ARM without exceding max :<br />
-              <select class="selector stat-selector stat-2selector"> 
-              </select>
-            </label>
-            <p class ="milestone"> After 75 points games:</p>
-            <label>+1 FOCUS. And you may chose an additionnal spell from the list, or a new capacity :<br />
-              <select class="selector pts75-1selector"> 
-              </select>
-              <select class="selector pts75-2selector"> 
-              </select>
-            </label>
-            <p class ="milestone"> After the first 100 points game:</p>
-            <label>you may chose an additional stat point for MAT/RAT/DEF/ARM without exceding max :<br />
-              <select class="selector stat-selector stat-3selector"> 
-              </select>
-            </label>
+            <p class ="milestone bg-light"> After 25 points games: </p>
+
+            <div class="form-group">
+              <label for="1st25sel">Chose an additionnal spell from the starting list, or a new capacity (also +1 FOCUS):</label>
+              <div class ="d-flex justify-content-between">
+                <select class="form-control selector pts25-1selector" style="width : 45%" id="1st25sel"></select>
+                <select class="form-control selector pts25-2selector" style="width : 45%" id="2nd25sel"></select>
+              </div>
+            </div>
+
+            <p class ="milestone bg-light"> After the first 50 points game:</p>
+            <div class="form-group">
+              <label for="1ststat">You may chose an additional stat point.</label>
+              <select class="form-control selector stat-1selector" id="1ststat" style="width : 45%"></select>
+            </div>
+        
+            <p class ="milestone bg-light"> After 50 points games:</p>
+            <div class="form-group">
+              <label for="1st50sel">Chose an additionnal weapon from the extended list, and your FEAT !!! (also +1 FOCUS):</label>
+              <div class ="d-flex justify-content-between">
+                <select class="form-control selector pts50-1selector" style="width : 45%" id="1st50sel"></select>
+                <select class="form-control selector pts50-2selector" style="width : 45%" id="2nd50sel"></select>
+              </div>
+            </div>
+      
+            <p class ="milestone bg-light"> After the first 75 points game:</p>
+            <div class="form-group" style="width : 45%">
+              <label for="2ndstat">You may chose an additional stat point.</label>
+              <select class="form-control selector stat-2selector" id="2ndstat" style="width : 45%"></select>
+            </div>
+            
+            <p class ="milestone bg-light"> After 75 points games:</p>
+            <div class="form-group">
+              <label for="1st75sel">Chose an additionnal spell, or a new capacity (also +1 FOCUS):</label>
+              <div class ="d-flex justify-content-between">
+                <select class="form-control selector pts75-1selector" style="width : 45%" id="1st75sel"></select>
+                <select class="form-control selector pts75-2selector" style="width : 45%" id="2nd75sel"></select>
+              </div>
+            </div>
+            
+            <p class ="milestone bg-light"> After the first 100 points game:</p>
+            <div class="form-group">
+              <label for="3dstat">You may chose an additional stat point.</label>
+              <select class="form-control selector stat-3selector" id="3dstat" style="width : 45%"></select>
+            </div>
           </div>
         </div>
         <div class="level-2">
           <br/>
-          <p>Register your games for additionnal bonuses !</p>
+          <!-- <p>Register your games for additionnal bonuses !</p> -->
           <p class="level-2-error error">You must first finish character creation ! </p>
           <div class="level-2-selectors">          
           </div>

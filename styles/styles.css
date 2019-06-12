@@ -111,5 +111,10 @@
 }
 
 .milestone{
+    text-align :center;
     font-weight : bold;
+}
+
+.milestone{
+    color : primary;
 }
