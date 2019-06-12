@@ -18,9 +18,9 @@ if (tab == 0 ){
         level2.style.display = "none";
         var level1error = document.querySelector(".level-1-error");
         var level1selectors = document.querySelector(".level-1-selectors");
-        if (currentchar.level ==0){
+        if (currentchar.card.level ==0){
             level1error.style.display = "block";
-            //level1selectors.style.display = "none";
+            level1selectors.style.display = "none";
 
 
             // TEMPORARY, REMOVE COMMENTARY WHEN TESTING IS DONE
@@ -34,7 +34,7 @@ if (tab == 0 ){
         level2.style.display = "block";
         var level2error = document.querySelector(".level-2-error");
         var level2selectors = document.querySelector(".level-2-selectors");
-        if (currentchar.level ==0){
+        if (currentchar.card.level ==0){
             level2error.style.display = "block";
             level2selectors.style.display = "none";
         }else{
