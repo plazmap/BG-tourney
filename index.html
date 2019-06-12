@@ -1,53 +1,89 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
     <title>Character creation</title>
-    <link rel="stylesheet" href="styles.css" />
-    </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/custom2.css" />
+  </head>
   <body>
-    <div class ="level-tabs">
-      <button id ="tablevel1" value="0">Initial Choices</button>
-      <button id ="tablevel2" value="1">Level up</button>
-      <button id ="tablevel3" value="2">Register Games</button>
-    </div>
-    <div class="selector-wrapper">
-      <div class="constructor">
-        <div class="level-0">
-          <label>Your Warcaster's name :<br>
-            <input type="text" id = "name-selector"></label>
-            <br><br>
-          <label>Chose your faction (better be Cryx, Weakling) :<br /><br />
-            <select class ="selector faction-selector">
-            </select>
-          </label>
-          <br /><br />
-
-          <label>Chose your caster type :<br /><br />
-            <select class="selector archetype-selector"> 
-            </select>
-          </label>
-          <br /><br />
-
-          <label>Chose your initial capacity :<br /><br />
-            <select class="selector capacity-selector"> 
-            </select>
-          </label>
-          <br /><br />
-
-          <label>Chose your starting spells :<br /><br />
-            <select class="selector spell-selector"> 
-            </select>
-            <br /><br />
-            <select class="selector spell-selector"> 
-            </select>
-            <br /><br />
-            <select class="selector spell-selector"> 
-            </select>
-          </label>
-          <br /><br />
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Plazma's Magic Constructor !</a>   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Creator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Your Warcasters  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Stuff</a>
+            </li>
+          </ul>
+        </div> 
+      </nav>
+  
+      <br/>
+    
+    <div class="row">
+      <div class="constructor col-sm-6">
+        
+        <div class ="level-tabs btn-group w-100">
+          <button type="button" id ="tablevel1" value="0" class="btn btn-warning rounded-0 w-25">Initial Choices</button>
+          <button type="button" id ="tablevel2" value="1" class="btn btn-info rounded-0 w-25">Level up</button>
+          <button type="button" id ="tablevel3" value="2" class="btn btn-warning rounded-0 w-25">Register Games</button>
+          <button type="button" id ="tablevel3" value="2" class="btn btn-info rounded-0 w-25">Save Warcaster</button>
+        </div>
+        
+        <div class="level-0 ">
+          <br/>
+          <div class="form-group w-100">
+            <label for="name-selector" >Your Warcaster's name :</label>
+            <input type="text" class="form-control name-selector" id="name-selector" placeholder="Please enter your name">
+          </div>
+          <br/>
+          <div class="d-flex justify-content-between">
+            <div class="form-group" style="width : 45%">
+              <label for="fctsel">Chose your faction :</label>
+              <select class="form-control selector faction-selector" id="fctsel">
+              </select>
+            </div> 
+            <div class="form-group" style="width : 45%">
+              <label for="castsel">Chose your caster type :</label>
+              <select class="form-control selector archetype-selector" id="castsel"></select>
+            </div>
+          </div>
+          <br/>
+          <div class="form-group" style="width : 45%">
+            <label for="capasel">Chose your initial capacity :</label>
+            <select class="form-control selector capacity-selector" id="capasel"></select>
+          </div>
+          <br/>
+          <div class="form-group">
+            <label for="spellsel1 spellsel2 spellsel3">Chose your starting spells :</label>
+            <div class ="d-flex justify-content-between">
+              <select class="form-control selector spell-selector" style="width : 45%" id="spellsel1"></select>
+              <select class="form-control selector spell-selector" style="width : 45%" id="spellsel2"></select>
+            </div>
+            <br/>
+            <select class="form-control selector spell-selector" style="width : 45%" id="spellsel3"></select>
+          </div>
         </div>
         <div class="level-1">
+          <br/>
           <p>After certain millestones you grow more powerfull !</p>
           <p class="level-1-error error">You must first finish character creation ! </p>
           <div class="level-1-selectors">
@@ -90,93 +126,98 @@
           </div>
         </div>
         <div class="level-2">
+          <br/>
           <p>Register your games for additionnal bonuses !</p>
           <p class="level-2-error error">You must first finish character creation ! </p>
           <div class="level-2-selectors">          
           </div>
         </div>
       </div>
+      <div class="warner col-sm-1">
 
-      <div class="helper">
-  
+      </div>
+      <div class="helper border border-primary col-sm-5">
+     
       </div>
     </div>
-    <br /><br />
-    <div class="descriptor">
-      <div class ="caster-header">
-        <div class="caster-generic caster-name">
-          <p>Unkown Warcarster</p>
-        </div>
-        <div class="caster-generic caster-archetype">
-            <p>Unkown Archetype</p>
-        </div>
-        <div class="caster-generic caster-level">
-            <p>Scrub</p>
-        </div>
-        <div class="caster-generic caster-faction">
-            <p>No allegiance. Yet.</p>
-        </div>
+  </div>
+  <br /><br />
+  <div class="descriptor bg-primary">
+    <div class ="caster-header bg-success">
+      <div class="caster-name">
+        <p>Unkown Warcarster</p>
       </div>
-      <div class="wrapper4" id="caster-stats">
-        <div class="wrapper5">
-          <p class="stat-name">SPD</p>
-          <p class="stat" id="SPD"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">STR</p>
-          <p class="stat" id="STR"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">MAT</p>
-          <p class="stat" id="MAT"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">RAT</p>
-          <p class="stat" id="RAT"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">DEF</p>
-          <p class="stat" id="DEF"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">ARM</p>
-          <p class="stat" id="ARM"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">CMD</p>
-          <p class="stat" id="CMD"></p>
-        </div>
-        <div class="wrapper5">
-          <p class="stat-name">FOC</p>
-          <p class="stat" id="FOC"></p>
-        </div>
-        <div class="wrapper6">
-          <div class="wrapper7">
-            <p class="stat-name">Prestige:</p>
-            <p class="stat" id="PRE">0</p>
-          </div>
-          <div class="wrapper7">
-            <p class="stat-name">Carnage:</p>
-            <p class="stat" id="CAR">0</p>
-          </div>
-        </div>
+      <div class="caster-archetype">
+        <p>Unkown Archetype</p>
       </div>
-      
-      <div class="wrapper1">
-        <div class="wrapper2" id="caster-capacities">
-          <p class="sub-title">Capacities :</p>
-        </div>
-        <div class="wrapper2" id="caster-weapons">
-          <p class="sub-title">Weapons :</p>
-        </div>
-        <div class="wrapper2" id="caster-spells">
-          <p class="sub-title">Spells :</p>
-        </div>
+      <div class="caster-level">
+        <p>Scrub</p>
       </div>
-      <div class="caster-feat">
-        <p class="sub-title">Feat :</p>
+      <div class="caster-faction">
+        <p>No allegiance. Yet.</p>
       </div>
     </div>
+    <br/>
+    <div class="wrapper4" id="caster-stats">
+      <div class="wrapper5">
+        <p class="stat-name">SPD</p>
+        <p class="stat" id="SPD"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">STR</p>
+        <p class="stat" id="STR"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">MAT</p>
+        <p class="stat" id="MAT"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">RAT</p>
+        <p class="stat" id="RAT"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">DEF</p>
+        <p class="stat" id="DEF"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">ARM</p>
+        <p class="stat" id="ARM"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">CMD</p>
+        <p class="stat" id="CMD"></p>
+      </div>
+      <div class="wrapper5">
+        <p class="stat-name">FOC</p>
+        <p class="stat" id="FOC"></p>
+      </div>
+      <div class="wrapper6">
+        <div class="wrapper7">
+          <p class="stat-name">Prestige:</p>
+          <p class="stat" id="PRE">&nbsp0</p>
+        </div>
+        <div class="wrapper7">
+          <p class="stat-name">Carnage:</p>
+          <p class="stat" id="CAR">&nbsp0</p>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="wrapper1">
+      <div class="wrapper2" id="caster-capacities">
+        <p class="sub-title">Capacities :</p>
+      </div>
+      <div class="wrapper2" id="caster-weapons">
+        <p class="sub-title">Weapons :</p>
+      </div>
+      <div class="wrapper2" id="caster-spells">
+        <p class="sub-title">Spells :</p>
+      </div>
+    </div>
+    <div class="caster-feat">
+      <p class="sub-title">Feat :</p>
+    </div>
+  </div>
   
 
     <script src="js/data.js"></script>

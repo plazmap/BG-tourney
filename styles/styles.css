@@ -1,28 +1,15 @@
 * {
-    box-sizing: border-box;
+
     border-width: 1px;
-    font-family: calibri;
 }
 
-.level-header{
-    width: 100%;
-    border-style: solid;
-    color : violet;
-    display :flex;
-    justify-content: start;
-}
-
-.selector-wrapper{
+.main-wrapper{
     min-height: 50VH;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;  
 }
 
-.constructor{
-    border-style: solid;
-    width:35%;
-}
 
 .level-1{
     display:none;
@@ -35,7 +22,6 @@
 
 .helper{
     border-style: solid;
-    width : 60%;
     display :flex;
     flex-direction: column;
     justify-content: start;
@@ -43,11 +29,12 @@
 }
 
 .descriptor{
-    color: red;
+    color: white;
     border-style: solid;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width:100%;
 
 }
 
@@ -55,18 +42,9 @@
     display:flex;
     justify-content: space-between;
     width: 100%;
-    border-style: solid;
-    color: lightgreen;
-}
-
-.caster-generic{
-    border-style: solid;
-    color: green;
 }
 
 .wrapper4{
-    border-style: solid;
-    color: lightblue;
     width :70%;
     justify-content: space-around;
     display: flex;
@@ -77,18 +55,11 @@
 }
 
 .wrapper5{
-    border-style: solid;
-    color:blue;
     display: flex;
     flex-direction: column;
 }
-.stat-name{
-    border-style: solid;
-    color : lightcoral;
-}
+
 .caster-feat{
-    border-style: solid;
-    color: lightblue;
     width:100%;
 }
 
@@ -97,8 +68,6 @@
 }
 
 .wrapper1{
-    border-style: solid;
-    color: lightblue;
     width:100%;
     display: flex;
     justify-content: space-between;
@@ -106,12 +75,14 @@
 
 .sub-title{
     font-style: italic;
+    text-decoration : underline;
 }
 
+.stat-name{
+    border-style: solid;
+}
 .wrapper2{
     width:30%;
-    border-style: solid;
-    color:blue;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -120,8 +91,6 @@
 
 .sub-wrapper{
     width: 100%;
-    border-style: solid;
-    color: darkblue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -129,29 +98,16 @@
 
 .sub-name{
     border-style: solid;
-    color: black;
     font-weight : bold;
 }
 
-.sub-description{
-    border-style: solid;
-    color:black;
-}
-
-.wrapper6{
-    border-style: solid;
-    color: lightblue;
-}
 .wrapper7{
-    border-style: solid;
-    color:blue;
     display: flex; 
-    display
 }
 
 .error{
-    font-weight : bold;
-    color : red;
+    font-weight: bold;
+    color: red;
 }
 
 .milestone{
