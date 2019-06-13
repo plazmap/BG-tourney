@@ -13,39 +13,39 @@
     <link rel="stylesheet" href="styles/custom2.css" />
   </head>
   <body>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Plazma's Magic Constructor !</a>   
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Creator</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Your Warcasters  </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Account</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Stuff</a>
-            </li>
-          </ul>
-        </div> 
-      </nav>
-  
-      <br/>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Plazma's Magic Constructor !</a>   
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Creator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Your Warcasters  </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Stuff</a>
+          </li>
+        </ul>
+      </div> 
+    </nav>
+
+    <br/>
     
     <div class="row">
       <div class="constructor col-sm-6">
-        
+
         <div class ="level-tabs btn-group w-100">
-          <button type="button" id ="tablevel1" value="0" class="btn btn-warning rounded-0 w-25">Initial Choices</button>
-          <button type="button" id ="tablevel2" value="1" class="btn btn-info rounded-0 w-25">Level up</button>
-          <button type="button" id ="tablevel3" value="2" class="btn btn-warning rounded-0 w-25">Register Games</button>
-          <button type="button" id ="tablevel3" value="2" class="btn btn-info rounded-0 w-25">Save Warcaster</button>
+          <button type="button" id ="tab-level-1" value="0" class="btn btn-warning rounded-0 w-25">Initial Choices</button>
+          <button type="button" id ="tab-level-2" value="1" class="btn btn-info rounded-0 w-25">Level up</button>
+          <button type="button" id ="tab-level-3" value="2" class="btn btn-warning rounded-0 w-25">Register Games</button>
+          <button type="button" id ="tab-level-4" value="3" class="btn btn-info rounded-0 w-25">Save Warcaster</button>
         </div>
         
         <div class="level-0 ">
@@ -113,7 +113,7 @@
             </div>
       
             <p class ="milestone bg-light"> After the first 75 points game:</p>
-            <div class="form-group" style="width : 45%">
+            <div class="form-group">
               <label for="2ndstat">You may chose an additional stat point.</label>
               <select class="form-control selector stat-2selector" id="2ndstat" style="width : 45%"></select>
             </div>
@@ -229,12 +229,33 @@
   </div>
   
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDC8dJeQ50JH59beDk3gqndyxISOSS916Y",
+    authDomain: "bg-tourney.firebaseapp.com",
+    databaseURL: "https://bg-tourney.firebaseio.com",
+    projectId: "bg-tourney",
+    storageBucket: "bg-tourney.appspot.com",
+    messagingSenderId: "728777122003",
+    appId: "1:728777122003:web:6955bfea74338974"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
     <script src="js/data.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/caster.js"></script>
     <script src="js/tabs.js"></script>
     <script src="js/selector/selectors.js"></script>
     <script src="js/selector/selector_main.js"></script>
+    <script src="js/firebase.js"></script>
     <script src="js/descriptor/descriptors.js"></script>
     <script src="js/descriptor/descriptor_main.js"></script>
     <!-- <script src="js/helper.js"></script> -->
