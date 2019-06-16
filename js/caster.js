@@ -2,43 +2,43 @@
 
 function caster() {
     this.decisions ={
-        name:"",
-        faction:"",
-        archetype:"",
-        firstcapacity:"",
+        name:null,
+        faction:null,
+        archetype:null,
+        firstcapacity:null,
         firstspells:[],
-        pts25first:"",
-        pts25second:"",
-        firststat:"",
-        pts50first:"",
-        pts50second:"",
-        secondstat:"",
-        pts75first:"",
-        pts75second:"",
-        thirdstat:""
+        pts25first:null,
+        pts25second:null,
+        firststat:null,
+        pts50first:null,
+        pts50second:null,
+        secondstat:null,
+        pts75first:null,
+        pts75second:null,
+        thirdstat:null
     }
     this.card ={
-        name:"",
-        faction:"",
-        archetype:"",
-        weapons:[],
-        capacities:[],
-        spells:[],
-        feat:"",
-        carnage:"",
-        perstige:"",
-        HP:"",
-        socle:"",
-        level:"",
+        name:null,
+        faction:null,
+        archetype:null,
+        weapons:null,
+        capacities:null,
+        spells:null,
+        feat:null,
+        carnage:null,
+        perstige:null,
+        HP:null,
+        socle:null,
+        level:null,
         stats:{
-            "SPD":"",
-            "STR":"",
-            "MAT":"",
-            "RAT":"",
-            "DEF":"",
-            "ARM":"",
-            "CMD":"",
-            "FOC":""
+            "SPD":null,
+            "STR":null,
+            "MAT":null,
+            "RAT":null,
+            "DEF":null,
+            "ARM":null,
+            "CMD":null,
+            "FOC":null
         }
     }
     this.cardUpdate = function(){
@@ -75,9 +75,11 @@ function caster() {
         }
 
         this.card.spells = [];
+        
         this.decisions.firstspells.forEach(spellkey => {
             this.card.spells.push(spellkey);
         });
+    
         
         if ((this.decisions.pts25first == "spell")&&(this.decisions.pts25second)){
             this.card.spells.push(this.decisions.pts25second);
@@ -166,48 +168,48 @@ document.addEventListener("select:name", function(e) {
 
 document.addEventListener("select:faction", function(e) {  
     currentchar.decisions.faction = e.detail.factionkey;
-    currentchar.decisions.archetype=undefined;
-    currentchar.decisions.firstcapacity=undefined;
+    currentchar.decisions.archetype=null;
+    currentchar.decisions.firstcapacity=null;
     currentchar.decisions.firstspells=[];
-    currentchar.decisions.pts25first=undefined;
-    currentchar.decisions.pts25second=undefined;
-    currentchar.decisions.firststat=undefined;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts25first=null;
+    currentchar.decisions.pts25second=null;
+    currentchar.decisions.firststat=null;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:archetype", function(e) {
     currentchar.decisions.archetype = e.detail.archetypekey;
-    currentchar.decisions.firstcapacity=undefined;
+    currentchar.decisions.firstcapacity=null;
     currentchar.decisions.firstspells=[];
-    currentchar.decisions.pts25first=undefined;
-    currentchar.decisions.pts25second=undefined;
-    currentchar.decisions.firststat=undefined;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts25first=null;
+    currentchar.decisions.pts25second=null;
+    currentchar.decisions.firststat=null;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:capacity", function(e) {
     currentchar.decisions.firstcapacity = e.detail.capacitykey;
-    currentchar.decisions.pts25first=undefined;
-    currentchar.decisions.pts25second=undefined;
-    currentchar.decisions.firststat=undefined;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts25first=null;
+    currentchar.decisions.pts25second=null;
+    currentchar.decisions.firststat=null;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
@@ -219,90 +221,90 @@ document.addEventListener("select:spell", function(e) {
             currentchar.decisions.firstspells.unshift(spellSelector.value);
         }
     })
-    currentchar.decisions.pts25first=undefined;
-    currentchar.decisions.pts25second=undefined;
-    currentchar.decisions.firststat=undefined;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts25first=null;
+    currentchar.decisions.pts25second=null;
+    currentchar.decisions.firststat=null;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:first25", function(e) {
     currentchar.decisions.pts25first = e.detail.decision;
-    currentchar.decisions.pts25second=undefined;
-    currentchar.decisions.firststat=undefined;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts25second=null;
+    currentchar.decisions.firststat=null;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:second25", function(e) {
     currentchar.decisions.pts25second = e.detail.decision;
-    currentchar.decisions.firststat=undefined;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.firststat=null;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:firststat", function(e) {
     currentchar.decisions.firststat = e.detail.decision;
-    currentchar.decisions.pts50first=undefined;
-    currentchar.decisions.pts50second=undefined;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts50first=null;
+    currentchar.decisions.pts50second=null;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:first50", function(e) {
     currentchar.decisions.pts50first = e.detail.decision;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:second50", function(e) {
     currentchar.decisions.pts50second = e.detail.decision;
-    currentchar.decisions.secondstat=undefined;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.secondstat=null;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:secondstat", function(e) {
     currentchar.decisions.secondstat = e.detail.decision;
-    currentchar.decisions.pts75first=undefined;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts75first=null;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:first75", function(e) {
     currentchar.decisions.pts75first = e.detail.decision;
-    currentchar.decisions.pts75second=undefined;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.pts75second=null;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
 document.addEventListener("select:second75", function(e) {
     currentchar.decisions.pts75second = e.detail.decision;
-    currentchar.decisions.thirdstat=undefined;
+    currentchar.decisions.thirdstat=null;
     currentchar.cardUpdate();
 });
 
