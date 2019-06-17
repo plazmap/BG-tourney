@@ -15,6 +15,7 @@ function saveCaster(name, faction, archetype, firstcapacity,firstspells,pts25fir
     pts75second: pts75second,
     thirdstat: thirdstat
   });
+  alert(name + " has been saved.");
 }
 
 savetab = document.querySelector("#tab-level-4");

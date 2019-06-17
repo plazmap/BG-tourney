@@ -48,6 +48,6 @@ var tabs = document.querySelector(".level-tabs");
 var levelbuttons = tabs.querySelectorAll("button");
 levelbuttons.forEach(levelbutton => {
     levelbutton.addEventListener("click", function(e){
-        manageTab(e.target.value);
+        manageTab(e.target.dataset.tab);
     });
 });

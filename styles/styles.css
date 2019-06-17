@@ -3,11 +3,20 @@
     border-width: 1px;
 }
 
-.main-wrapper{
-    min-height: 50VH;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;  
+.navigation{
+    min-height:50VH;
+}
+
+.listor-nav{
+    display:none;
+}
+
+.account-nav{
+    display:none;
+}
+
+.stuff-nav{
+    display:none;
 }
 
 
