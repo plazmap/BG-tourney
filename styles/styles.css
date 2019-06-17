@@ -126,3 +126,20 @@
 
 .milestone{
 }
+
+.caster-display{
+    display: flex;
+    width:40%;
+    border-top: solid 1px;
+}
+
+@media only screen and (max-width: 576px) {
+    .caster-display {
+     width: 100%;
+     flex-direction: column; 
+    }
+}
+
+.caster-sub-display{
+    width: 25%;
+}

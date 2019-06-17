@@ -28,7 +28,7 @@ nav4 = document.querySelector(".nav-4");
     }
     if (nav==2){
         creatornav.style.display = "none";
-        listornav.style.display = "flex";
+        listornav.style.display = "block";
         accountnav.style.display = "none";
         stuffnav.style.display = "none";
 
@@ -41,7 +41,7 @@ nav4 = document.querySelector(".nav-4");
     if (nav==3){
         creatornav.style.display = "none";
         listornav.style.display = "none";
-        accountnav.style.display = "flex";
+        accountnav.style.display = "block";
         stuffnav.style.display = "none";
 
         nav1.classList.remove("active");
@@ -54,7 +54,7 @@ nav4 = document.querySelector(".nav-4");
         creatornav.style.display = "none";
         listornav.style.display = "none";
         accountnav.style.display = "none";
-        stuffnav.style.display = "flex";
+        stuffnav.style.display = "block";
 
         nav1.classList.remove("active");
         nav2.classList.remove("active");
