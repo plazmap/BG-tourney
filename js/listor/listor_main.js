@@ -1,9 +1,14 @@
 let casterlist = document.querySelector(".caster-list");
 
+let casterbutton = document.querySelector(".caster-button");
+
+casterbutton.addEventListener("click", function(e){
+    updateListOfCasters();
+});
 
 function updateListOfCasters(){
   deleteChildren(casterlist);
-  firebase.database().ref("/casters").once("value").then(function(snapshot){
+  firebase.database().ref("casters/").once("value").then(function(snapshot){
     snapshot.forEach(caster => {
       var wrapper = document.createElement("div");
       wrapper.classList.add("caster-display");
@@ -46,15 +51,30 @@ function updateListOfCasters(){
 }
 
 function changeCaster(name){
-  firebase.database().ref("/casters").once("value").then(function(snapshot){
+  firebase.database().ref("casters/"+name).once("value").then(function(snapshot){
+    Object.keys(currentchar.decisions).forEach(decision =>{
+      currentchar.decisions[decision] = null;
+      currentchar.decisions.firstspells =[];
+    });
+    currentchar.decisions.name = snapshot.val().name;
+    currentchar.decisions.faction = snapshot.val().faction;
+    currentchar.decisions.archetype = snapshot.val().archetype;
+    currentchar.decisions.firstcapacity = snapshot.val().firstcapacity;
+    currentchar.decisions.firstspells = snapshot.val().firstspells;
+    currentchar.decisions.pts25first = snapshot.val().pts25first;
+    currentchar.decisions.pts25second = snapshot.val().pts25second;
+    currentchar.decisions.firststat = snapshot.val().firststat;
+    currentchar.decisions.pts50first = snapshot.val().pts50first;
+    currentchar.decisions.pts50second = snapshot.val().pts50second;
+    currentchar.decisions.secondstat = snapshot.val().secondstat;
+    currentchar.decisions.pts75first = snapshot.val().pts75first;
+    currentchar.decisions.pts75second = snapshot.val().pts75second;
+    currentchar.decisions.thirdstat = snapshot.val().thirdstat;
 
+    currentchar.cardUpdate();
+    descriptorUpdate();
+    selectorUpdate();
+  });
 }
 
 
-
-let casterbutton = document.querySelector(".caster-button");
-
-
-casterbutton.addEventListener("click", function(e){
-    updateListOfCasters();
-});
